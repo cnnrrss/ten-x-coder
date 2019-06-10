@@ -1,7 +1,12 @@
 package main
 
-import "fmt"
+import (
+     "fmt"
+     "strconv"
+)
 
 func main() {
-     fmt.Println("Hello World!")
+
+     butt, err := strconv.Atoi("s123")
+     fmt.Printf("Hello World %v", )
 }

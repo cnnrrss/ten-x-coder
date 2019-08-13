@@ -1,10 +1,10 @@
 # Solutions to Leetcode Problems
 
-[Go](#Go)
-[Java](#Java)
-[Javascript](#Javascript)
-[Python](#Python)
-[Bash](#Bash)
+[Go](#Go) \
+[Java](#Java) \
+[Javascript](#Javascript) \
+[Python](#Python) \
+[Bash](#Bash) \
 [SQL](#SQL)
 
 ## Go

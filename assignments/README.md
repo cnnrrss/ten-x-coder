@@ -1,7 +1,9 @@
 # Programming Assignments to learn
 
-[JSON Parser](#JSON\wParser) \
-[LRU Cache](#LRU\wCache\w-\wLeast\wRecently\wUsed\wCache) \
+
+
+[JSON Parser](#JSON%20Parser) \
+[LRU Cache](LRU%20Cache%20-%20Least%20Recently%20-%20Used%20Cache) \
 [Differ](#Differ)
 
 ## JSON Parser
@@ -17,12 +19,12 @@ Things learned: \
 
 Provide fast and efficient way of retrieving data
 
-Requirements: \
+Requirements:
 - Fixed Size: bounds to limit memory usages
 - Fast Access: Cache Insert and lookup operation should be fast , preferably O(1) time.
 - Replacement of Entry in case , Memory Limit is reached: A cache should have efficient algorithm to evict the entry when memory is full.
 
-Things learned: \
+Things learned:
 - Caching
 - Queue (Deque)
 - Doubly Linked List

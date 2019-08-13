@@ -1,5 +1,12 @@
 # Solutions to Leetcode Problems
 
+[Go](#Go)
+[Java](#Java)
+[Javascript](#Javascript)
+[Python](#Python)
+[Bash](#Bash)
+[SQL](#SQL)
+
 ## Go
 
 01_matrix \
@@ -142,3 +149,7 @@ number_of_longest_increasing_subsequence \
 palindrome_number \
 reverse_linked_list \
 valid_anagram
+
+## SQL
+
+second_highest_salary

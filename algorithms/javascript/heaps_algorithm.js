@@ -39,12 +39,5 @@ function heapsAlgorithm(str) {
 	return filtered.length;
 }
 
-
-
-// function swapSingleLine(x, y) {
-// 	[x, y] = [y, x];
-// 	return x, y;
-// }
-
 var ans = heapsAlgorithm("aaaBB");
 console.log(ans);

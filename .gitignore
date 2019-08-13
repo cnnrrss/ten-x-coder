@@ -1,3 +1,6 @@
-*.idea
+*.idea*
+*.iml*
+java/princeton-algorithims-pt1/out/*
+java/princeton-algorithims-pt1/submissions/*
 *CMakeLists.txt
 *cmake-build-debug

@@ -3,13 +3,10 @@
 ## Go
 
 01_matrix \
-01_matrix. \
-add_to_numbers \
 add_two_numbers \
 average_of_levels_in_binary_tree \
 best_time_to_buy_and_sell_stock \
 binary_tree_inorder_traversal \
-binary_tree_inorder_traversal. \
 binary_tree_level_order_traversal \
 binary_tree_preorder_traversal \
 climbing_stairs \
@@ -17,7 +14,6 @@ coin_change \
 combination_sum \
 combinations \
 container_with_most_water \
-container_with_most_water. \
 contains_duplicate \
 conver_sorted_list_to_binary_search_tree \
 convert_bst_to_greater_tree \
@@ -29,7 +25,6 @@ find_common_characters \
 find_largest_value_in_each_tree_row \
 find_peak_element \
 first_missing_positive \
-first_missing_positive. \
 first_unique_character_in_a_string \
 fizzbuzz \
 flatten_binary_tree_to_linked_list \
@@ -44,7 +39,6 @@ intersection_of_two_linked_lists \
 invert_binary_tree \
 is_subsequence \
 jump-game \
-jump_game \
 kth_largest_element_in_a_stream \
 leaf-similar_trees \
 length_of_longest_substring \
@@ -78,12 +72,10 @@ remove_duplicates_from_sorted_array \
 remove_duplicates_from_sorted_list \
 remove_k_digits \
 remove_nth_node_from_end_of_list \
-remove_nth_node_from_end_of_list. \
 reverse_integer \
 reverse_linked_list \
 reverse_nodesin_k-group \
 reverse_string \
-reverse_string. \
 robot_return_to_origin \
 roman_numerals \
 roman_to_integer \
@@ -91,9 +83,7 @@ rotate_array \
 rotate_image \
 rotate_list \
 same_tree \
-same_tree. \
 search_a_2d_matrix \
-search_a_2d_matrix. \
 search_in_a_binary_search_tree \
 search_insert_position \
 search_rotated_sorted_array \
@@ -117,7 +107,6 @@ valid_parenthesis \
 valid_sudoku \
 validate_binary_search_tree \
 validate_stack_sequences \
-validate_stack_sequences. \
 word_search \
 
 ## Java
@@ -131,14 +120,14 @@ search_in_rotated_sorted_array \
 
 ## Javascript
 
-length_of_substring
-longest_common_prefix
-longest_substring
-minimum_depth_of_binary_tree
-reverse_integer
-reverse_integer_2
-rotatearray
-twosum
+length_of_substring \
+longest_common_prefix \
+longest_substring \
+minimum_depth_of_binary_tree \
+reverse_integer \
+reverse_integer_2 \
+rotatearray \
+twosum \
 
 ## Bash
 

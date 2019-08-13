@@ -2,22 +2,22 @@
 
 
 
-[JSON Parser](#JSON%20Parser) \
-[LRU Cache](#LRU%20Cache%20-%20Least%20Recently%20-%20Used%20Cache) \
-[Differ](#Differ)
+- [ ] [JSON Parser](#JSON-Parser)
+- [ ] [LRU Cache](#LRU-cache)
+- [ ] [Differ](#Differ)
 
 ## JSON Parser
 
-Things learned: \
+Things learned:
 - JSON
 - Lexer
 - Parser
 - Tokenizer
 - Building a library
 
-## LRU Cache - Least Recently Used Cache
+## LRU Cache
 
-Provide fast and efficient way of retrieving data
+Least Recently Used Cache. Provide fast and efficient way of retrieving data
 
 Requirements:
 - Fixed Size: bounds to limit memory usages

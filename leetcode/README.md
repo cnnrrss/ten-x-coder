@@ -89,7 +89,6 @@ search_insert_position \
 search_rotated_sorted_array \
 single_element_in_a_sorted_array \
 single_number \
-single_number. \
 snakes_and_ladders \
 sock_merchant \
 sort_array_by_parity \
@@ -107,7 +106,7 @@ valid_parenthesis \
 valid_sudoku \
 validate_binary_search_tree \
 validate_stack_sequences \
-word_search \
+word_search
 
 ## Java
 
@@ -116,7 +115,7 @@ flatten_nested_list_iterator \
 next_permutaion \
 reverse_integer \
 reverse_linked_list \
-search_in_rotated_sorted_array \
+search_in_rotated_sorted_array
 
 ## Javascript
 
@@ -127,7 +126,7 @@ minimum_depth_of_binary_tree \
 reverse_integer \
 reverse_integer_2 \
 rotatearray \
-twosum \
+twosum
 
 ## Bash
 
@@ -142,4 +141,4 @@ isPalindrome \
 number_of_longest_increasing_subsequence \
 palindrome_number \
 reverse_linked_list \
-valid_anagram \
+valid_anagram

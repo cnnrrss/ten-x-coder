@@ -61,6 +61,7 @@ maximum_depth_of_binary_tree \
 maximum_subarry \
 median_of_two_sorted_arrays \
 meeting_rooms_ii \
+merge_intervals \
 merge_sorted_array \
 merge_two_sorted_lists \
 middle_of_the_linked_list \
@@ -119,7 +120,9 @@ word_search
 
 min-stack \
 flatten_nested_list_iterator \
+flipping_an_image \
 next_permutaion \
+print_in_order \
 reverse_integer \
 reverse_linked_list \
 search_in_rotated_sorted_array
@@ -147,9 +150,12 @@ first_bad_version \
 isPalindrome \
 number_of_longest_increasing_subsequence \
 palindrome_number \
+plus_one \
 reverse_linked_list \
 valid_anagram
 
 ## SQL
-
-second_highest_salary
+combine_two_tables \
+employees_earning_more_than_their_managers \
+second_highest_salary \
+nth_highest_salary

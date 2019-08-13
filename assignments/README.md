@@ -1,6 +1,4 @@
-# Programming Assignments to learn
-
-
+# Programming assignments for practice
 
 - [ ] [JSON Parser](#JSON-Parser)
 - [ ] [LRU Cache](#LRU-cache)

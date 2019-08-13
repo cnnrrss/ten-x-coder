@@ -2,7 +2,16 @@
 
 My journey to know it all and become l33t.
 
+## Assignments
+
+[JSON Parser](assignments/#JSON-Parser) \
+[LRU Cache](assignments/#LRU-cache) \
+[Differ](assignments/#Differ)
+
 ## Algorithms
+
+[Go](algorithms/README.md#Go) \
+[Javascript](algorithms/README.md#Javascript)
 
 ## Coding Challenges
 

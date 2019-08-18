@@ -21,7 +21,7 @@ Classes should only have access on an as needed basis.
 
 In Go we can imbed
 
-```golang
+```go
 type Cat struct {}
 func (c Cat) Legs() int { return 4 }
 func (c Cat) PrintLegs() { fmt.Printf("I have %d legs\n", c.Legs())}
@@ -47,9 +47,10 @@ A great rule of thumb for Go is accept interfaces, return structs. _–Jack Lind
 ### Dependency Inversion Principle
 
 High-level modules should not depend on low-level modules. \
-Both should depend on abstractions. \
-Abstractions should not depend on details. Details should depend on abstractions. \
-_–Robert C. Martin_ aka Uncle Bob
+Both should depend on abstractions.
+
+_"Abstractions should not depend on details. Details should depend on abstractions."_ \
+_– Robert C. Martin_ aka Uncle Bob
 
 Inversion of control
 
@@ -60,12 +61,12 @@ Inject dependencies to other classes
 • Abstraction - "hide complexity". It enables you to focus on _what_ the object does not _how_ it does it.
 
 • Encapsulation - Prevents access to implementation details i.e. Wrapping up a data member and a method together into a single unit. 
-	• Binding together of data and methods and hence gaining control over whats exposed, how its exposed and data modification.
-	• How you define the boundary of your class, data and methods. The four visibility modifiers are public, default(without any keywords), protected and private.
+- Binding together of data and methods and hence gaining control over whats exposed, how its exposed and data modification.
+- How you define the boundary of your class, data and methods. The four visibility modifiers are public, default(without any keywords), protected and private.
 
 • Polymorphism - "one name/form many uses"
-	• Compile-time: compiler identifies which polymorphism form it has to take and execute at compile time. (Overloading).
-	• Run-time: compiler identifies which polymorphism form it has to take and execute at runtime but not at compile time. (Overriding).
+- Compile-time: compiler identifies which polymorphism form it has to take and execute at compile time. (Overloading).
+- Run-time: compiler identifies which polymorphism form it has to take and execute at runtime but not at compile time. (Overriding).
 
 • Inheritance - "is a" (Example: parent->child relationship). 
-	• When a class includes a property of another class it is Inheritance.
+- When a class includes a property of another class it is Inheritance.

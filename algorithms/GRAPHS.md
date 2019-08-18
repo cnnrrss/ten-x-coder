@@ -1,0 +1,27 @@
+## Graph
+- Objects and pointer representation
+- Adjacency list representation
+- Matrix representation
+- Nodes and edges
+- Dijksta shortest path (finding a path)
+- Connected components
+- A*
+- Points
+- Directed graph vs Undirected graph
+- Weighted vs Unweighted graph
+- Sparse / Dense
+- Labeled / Unlabeled
+- Simple / Non-simple
+- Cyclic / Acyclic
+- Explicit / Implicit
+- Embedded / Topological
+- Bipartite graph
+- Network flows
+- Traversing a Graph
+	- Undiscovered, Discovered, Processed
+- Topological Sorting
+- Weight Graph Algorithms
+	- Minimum Spanning Tree
+	- Prims
+	- Kruskals
+	- Union-Find DS

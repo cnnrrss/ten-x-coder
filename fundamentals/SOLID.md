@@ -70,3 +70,6 @@ Inject dependencies to other classes
 
 • Inheritance - "is a" (Example: parent->child relationship). 
 - When a class includes a property of another class it is Inheritance.
+
+**Side effect of 4:**
+• Reusable code

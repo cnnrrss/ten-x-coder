@@ -1,6 +1,6 @@
 ## Algorithmic Changes
 
-![](assets/big_O_complexity_chart.png)
+![](../assets/big_O_complexity_chart.png)
 Link: http://bigocheatsheet.com
 
 
@@ -43,5 +43,5 @@ Advice: don't run this on a million rows
 
 Advice: good luck if you have more than a dozen or two data points
 
-![](assets/big_O_datastructure_operations.png)
-![](assets/big_O_array_sorting_algorithms.png)
+![](../assets/big_O_datastructure_operations.png)
+![](../assets/big_O_array_sorting_algorithms.png)

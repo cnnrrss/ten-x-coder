@@ -1,6 +1,12 @@
 # Go the language stuff
 
 
+## Examples
+
+Example programs and code:
+
+**Walk Dir**: a program to walk a filesystem directory, recursively or not. WIP for TODO [item](../TODO.md)
+
 ## Concurrency
 
 Techniques, design patterns, and definitions for concurrency in Go

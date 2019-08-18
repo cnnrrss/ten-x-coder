@@ -1,6 +1,6 @@
 # How to be a Ten X Coder
 
-My journey to know it all and become l33t.
+My journey to know it all and become l33t. The great monolith of programming knowledge.
 
 ## Algorithms
 

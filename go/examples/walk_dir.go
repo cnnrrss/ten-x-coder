@@ -3,6 +3,7 @@ package main
 import (
 	"flag"
 	"fmt"
+	"io/ioutil"
 	"log"
 	"os"
 	"path/filepath"
@@ -35,7 +36,8 @@ func walkCurDir(dir string) {
 }
 
 func genDirFileInfo(dir string) chan os.FileInfo {
-	files, err := filepath.Glob(dir)
+	// files, err := filepath.Glob(dir)
+	files, err := ioutil.ReadDir(dir)
 	if err != nil {
 		log.Print(err)
 	}
@@ -43,12 +45,7 @@ func genDirFileInfo(dir string) chan os.FileInfo {
 	fChan := make(chan os.FileInfo)
 	// generator anon func
 	go func() {
-		for _, fName := range files {
-			file, err := os.Open(fName)
-			fi, err := file.Stat()
-			if err != nil {
-				log.Print(err)
-			}
+		for _, fi := range files {
 			fChan <- fi
 		}
 		close(fChan)

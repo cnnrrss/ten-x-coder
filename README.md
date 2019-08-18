@@ -35,13 +35,13 @@ Collection of useful graphics
 
 ## Fundamentals
 
-[Linux](fundamentals/LINUX.md)
-[Unix](fundamentals/UNIX.md)
+[Linux](fundamentals/LINUX.md) \
+[Unix](fundamentals/UNIX.md) \
 [Object Oriented Programming](fundamentals/SOLID.md)
 
 
 ## Programming Languages
 
-[Python](python/README.md)
-[Go](go/README.md)
-[Elixir](elixir/README.md)
+[Python](python/) \
+[Go](go/) \
+[Elixir](elixir/)

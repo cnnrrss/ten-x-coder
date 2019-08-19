@@ -1,13 +1,10 @@
-package main
+package concurrency
 
 import (
 	"fmt"
 	"sync"
 	"time"
 )
-
-func main() {
-}
 
 type value struct {
 	mu    sync.Mutex

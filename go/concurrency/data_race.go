@@ -1,14 +1,10 @@
-package main
+package concurrency
 
 import (
 	"fmt"
 	"sync"
 	"time"
 )
-
-func main() {
-
-}
 
 func dataRace() {
 	var data int

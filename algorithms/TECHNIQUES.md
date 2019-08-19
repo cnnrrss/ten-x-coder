@@ -16,7 +16,7 @@ Two pointers:
 - Slow-runner and fast-runner
 - Classic example is to remove duplicates from a sorted array.
 - Another variation is one pointer at beginning, other p at the end moving toward each other until the both meet. (Reverse characters in a string)
-- Classic problems: Remove Duplicates from Sorted Array, Two Sum II - Input array is sorted, Reverse Words in a String II, Rotate Array, Valid Palindrome, Container with Most Water, Product of Array Except Self
+**Classic problems**: Remove Duplicates from Sorted Array, Two Sum II - Input array is sorted, Reverse Words in a String II, Rotate Array, Valid Palindrome, Container with Most Water, Product of Array Except Self
 
 ## Divide and conquer
 - Sorting

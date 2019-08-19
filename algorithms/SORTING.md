@@ -1,7 +1,8 @@
 # Array Sorting Algorithms
 
 ## O (n log n ) Sort Algorithms
-### Quicksort
+
+#### Quicksort
 - Comparison sort (meaning it can sort items of any type for which a "less than" relation is defined)
 - Worst O(n^2) | Avg O(n log n) | Best O(n log n)
 - Can operate in-place on an array requiring no add. memory
@@ -12,7 +13,7 @@
 the pivot
     3. Recursively* apply the above steps to the sub-array of elements with smaller values and sub-arr with greater values
 
-### Mergesort 
+#### Mergesort 
 Efficient gen-purpose comparison based sorting algo
 - Most implementations produce a stable sort
 - Divide and conquer
@@ -22,16 +23,16 @@ Efficient gen-purpose comparison based sorting algo
 - Top-Down or Bottom-Up
 - Space Complex O(n)
 
-### Heapsort
+#### Heapsort
 Space Complex O(1)
 
-### Radix Sort
+#### Radix Sort
 (comparison based) - fast but store in memory
 - O(wn) w = word length; n = keys;
 - If w not constant, then O(n log n) <- Worse then other comp algos O(log n)
 
 ## Basic Sorts
-### Bubble Sort
+#### Bubble Sort
 Sorting by exchage
 - simple
 	- step through list
@@ -44,22 +45,22 @@ Sorting by exchage
 - Could be practical if input is in mostly sorted order.***
 - O(n^2)
 
-### Insertion Sort
+#### Insertion Sort
 Sorting by insertion
 
-### Selection Sort
+#### Selection Sort
 Sort by selecting
 
 
 ## Other Sorts
 
-### Timsort 
+#### Timsort 
 - Hybrid sort 
 - Insertion sort to combine runs smaller than minimum run size and merge sort otherwise.
 
 
 
-### Tree Sort
+#### Tree Sort
 Insertion sort
 
 A tree sort is a sort algorithm that builds a binary search tree from the elements to be sorted, and then traverses the tree (in-order) so that the elements come out in sorted order. 
@@ -68,20 +69,21 @@ Its typical use is sorting elements online: after each insertion, the set of ele
 - Avg O(log n)
 - Trees require memory to be allocated on the heap, which is a performance hit
 
-### Splaysort 
+#### Splaysort 
 Adaptive comparison sorting algorithm basedo on the splay tree data structure.
 
 
-### Shell Sort
+#### Shell Sort
 Insertion sort
 
 
-### Bucket Sort
+#### Bucket Sort
 TODO
 
-### Counting Sort
+#### Counting Sort
 
-### Cubesort
+#### Cubesort
 
-#### Vocabulary
+
+## Vocabulary
 **Comparison sort** - meaning it can sort items of any type for which a "less than" relation is defined

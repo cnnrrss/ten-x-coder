@@ -137,6 +137,10 @@ Elastic Transcoder
 Lambda Blueprints
 Enhanced Fan-out/Fan-in
 
+### Security
+**Amazon Macie**: Discover, Classify, and Protect Your Data.
+
+
 ### IOT
 **Device Registry**
 **Device Shadow**

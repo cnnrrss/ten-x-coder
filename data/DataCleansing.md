@@ -16,6 +16,12 @@
     - Handle Missing Data
     - ML?
 
+Enriching the data, converting
+
+Linting tool, inconsistent timestamps.
+
+
+
 #### Why do we need clean data?
 
 Better Data > Fancier Algorithms
@@ -59,12 +65,17 @@ Strict vs fuzzy
 
 ## Opensource Projects
 **OpenRefine** (formerly GoogleRefine): free and open source \
-**Drake**
+[**Drake**](https://github.com/Factual/drake)
+[**DataFu**](https://github.com/linkedin/datafu)
+**SparkQL** 
+    - [CleanFrames](https://github.com/funkyminds/cleanframes)
+[**Optimus**](https://github.com/ironmussa/Optimus) - Cleansing, pre-processing, feature engineering, exploratory data analysis and easy ML with PySpark backend.
 
 ## Languages
 **Scala / Java**: functional programming
 **Python / Pandas / Numpy**: multi-purpose dynamic programming
 **R**: Statistical analysis
+[**Julia**](https://julialang.org)
 
 ## [Tools](https://github.com/academic/awesome-datascience#toolboxes---environment)
 
@@ -81,8 +92,6 @@ CoreML (Apple)
 Pyro & Michelangelo (Uber)
 [Gluon](https://github.com/gluon-api/gluon-api) + MXNet (Amazon)
 DeepMind (Sonnet)
-Optimus - Cleansing, pre-processing, feature engineering, exploratory data analysis and easy ML with PySpark backend.
-[CleanFrames](https://github.com/funkyminds/cleanframes)
 
 ## Manual Classification/Correction
 

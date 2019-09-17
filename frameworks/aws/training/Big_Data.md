@@ -9,6 +9,12 @@ Practice tests, Acloud Guru
 
 #### Glue
 ETL tool
+Glue can run custom scripts stored in S3.
+
+- Interface to create job rules
+- Apply rules as custom scripts to Glue job
+- Report on total data quality
+
 
 #### Elasticsearch Service
 

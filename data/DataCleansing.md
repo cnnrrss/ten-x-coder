@@ -1,5 +1,8 @@
 # Data Cleansing
 
+**Chief measures**
+Accuracy, Completeness, Consistency, Timeliness, Uniqueness, Validity
+
 **3 major components**:
 - **Detection**: corrupt, inaccurate, or anomalies
     - Invalid Types
@@ -19,8 +22,6 @@
 Enriching the data, converting
 
 Linting tool, inconsistent timestamps.
-
-
 
 #### Why do we need clean data?
 
@@ -103,3 +104,45 @@ Crowdflower
 ## Search
 - ElasticSearch
 - Lucene / Solr
+
+
+## Examples
+
+Incorrect email addresses - significant impact on marketing campaigns
+    - Email regex, user dedupe, etc.
+
+Inaccurate personal details - Missed sales opportunities, customer complaints
+
+**Improve Data Quality**: 
+Prevention, Correction, Failure
+
+Tasks that used to be done by data professionals, such as data experts, now done by operational workers that know the data best, is called selfservice. It requires workflow-driven, easy-to-use tools with an Excel-like UI and smart guidance.
+
+## Wishlist
+
+[Twitter Thread](https://twitter.com/heatherklus/status/1166512298971648000)
+
+- python and r support parity via JupyterLab, RStudio, VS Code
+- cloud native 
+- individual and team level data access management 
+- git access
+- spin up and down spark clusters w/ and w/o gpu 
+- ability for each user to install any pkg
+- some analysis access component (think Airbnb knowledge repo)
+- Simple and integrated experiment tracking/comparison
+- An API that allows everything to be scripted
+- Mobile support so I can fire off a run and monitor it while I’m at lunch/home
+- The ability to get a text or email when a model has finished training.
+- experiment tracking
+- versioning
+- project lifecycle management
+- spark clusters 
+- k8s based
+- job scheduler
+- install any package
+- rich knowledge repo with search
+- reusable data connections
+- web app publisher/hosting 
+- model API publisher/hosting
+- Integration with git, Airflow, SAS, H2O, DataRobot, Matlab, …
+- SSO, SAML, AAA

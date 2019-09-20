@@ -4,7 +4,17 @@ You can add data to an Amazon Kinesis data stream via PutRecord and PutRecords o
 
 **note how KPL and kinesis agent are different.KPL is only available on Java and C+
 
-**Producers**
+## Kinesis Streams
+![](../../assets/amazon_kinesis_streams.png)
+
+#### Kinesis Data Streams
+A single shard can ingest up to 1 MiB of data per second (including partition keys) or 1,000 records per second for writes. Similarly, if you scale your stream to 5,000 shards, the stream can ingest up to 5 GiB per second or 5 million records per second. 
+
+Each shard can support up to fve read transactions per second 
+
+#### Kinesis Video Streams
+
+### Producers
 
 Producers are the systems sending data.
 You can send data using:
@@ -12,7 +22,7 @@ You can send data using:
 - Kinesis Agent
 - Kinesis API
 
-**Consumers** 
+### Consumers
 
 Consumer can be implemented with
 
@@ -33,12 +43,6 @@ Kinesis Data Firehose provides the following Lambda blueprints that you can use 
 • **Syslog to CSV** — Parses and converts Syslog lines to CSV format.
 • **Kinesis Data Firehose Process Record Streams as source** — Accesses the Kinesis Data Streams records in the input and returns them with a processing status.
 • **Kinesis Data Firehose CloudWatch Logs Processor** — Parses and extracts individual log events from records sent by CloudWatch Logs subscription filters.
-
-## Data Streams
-
-A single shard can ingest up to 1 MiB of data per second (including partition keys) or 1,000 records per second for writes. Similarly, if you scale your stream to 5,000 shards, the stream can ingest up to 5 GiB per second or 5 million records per second. 
-
-Each shard can support up to fve read transactions per second 
 
 ### Kinesis Connector Library
 Used to connect Kinesis with other services on AWS. KCL is required to use this Library

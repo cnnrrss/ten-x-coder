@@ -45,6 +45,5 @@ How your data is sorted has an important effect on disk I/O, columnar compressio
 Choose sort keys for the SSB tables based on these best practices:
 
 - If **recent** data is queried **most frequently**, specify the **timestamp column** as the leading column for the sort key.
-- If you do **frequent range filtering** or e**quality filtering** on one column, **specify that column** as the sort key.
+- If you do **frequent range filtering** or **equality filtering** on one column, **specify that column** as the sort key.
 - If you frequently **join** a (**dimension**) table, specify the **join column** as the sort key.
-

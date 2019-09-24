@@ -92,10 +92,10 @@ Lambda Blueprints
 
 Kinesis Data Firehose provides the following Lambda blueprints that you can use to create a Lambda function for data transformation.
 
-• **General Firehose Processing** — Contains the data transformation and status model described in the previous section. Use this blueprint for any custom transformation logic.
-• **Syslog to JSON** — Parses and converts Syslog lines to JSONobjects, using predefined JSON field names.
-• **Syslog to CSV** — Parses and converts Syslog lines to CSV format.
-• **Kinesis Data Firehose Process Record Streams as source** — Accesses the Kinesis Data Streams records in the input and returns them with a processing status.
+• **General Firehose Processing** — Contains the data transformation and status model described in the previous section. Use this blueprint for any custom transformation logic. \
+• **Syslog to JSON** — Parses and converts Syslog lines to JSONobjects, using predefined JSON field names. \
+• **Syslog to CSV** — Parses and converts Syslog lines to CSV format. \
+• **Kinesis Data Firehose Process Record Streams as source** — Accesses the Kinesis Data Streams records in the input and returns them with a processing status. \
 • **Kinesis Data Firehose CloudWatch Logs Processor** — Parses and extracts individual log events from records sent by CloudWatch Logs subscription filters.
 
 

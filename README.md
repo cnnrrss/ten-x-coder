@@ -27,6 +27,7 @@ All of the data
 [AWS](frameworks/aws/)
 [GCP](frameworks/gcp/)
 [Kafka](frameworks/kafka/)
+[Spark](frameworks/spark/)
 
 ## Coding Challenges
 

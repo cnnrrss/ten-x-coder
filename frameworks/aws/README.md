@@ -38,11 +38,11 @@ Tags: compute, devops
 ## Databases
 **RDS**: Relational Database Service (MySQL fork)
 
-**DynamoDB**: NoSqlDB
+**[DynamoDB](DynamoDB.md)**: NoSqlDB
 
 **ElastiCache**: easy to set up, manage, and scale distributed in-mem cache environments in AWS Cloud. Provides a high perf, resizable and cost-effective in-mem cache, while removing complexity associated w/ deploying and managing a distributed cache env. ElastiCache works w/ both Redis and Memcached engines.
 
-**Redshift**: fast, fully managed, petabyte-scale data warehouse service that makes it simple and cost-effective to efficiently analyze all your data using your existing business intelligence tools. Optimized for datasets ranging from a few hundred GB - PB or more and costs < $1,000/TB/year. 1/10 the cost of most traditional data warehousing solutions.
+**[Redshift](Redshift.md)**: fast, fully managed, petabyte-scale data warehouse service that makes it simple and cost-effective to efficiently analyze all your data using your existing business intelligence tools. Optimized for datasets ranging from a few hundred GB - PB or more and costs < $1,000/TB/year. 1/10 the cost of most traditional data warehousing solutions.
 
 **QLDB**: Quantum Ledger DB - 
 
@@ -59,7 +59,7 @@ Sharding process
 ## Streaming
 **SQS**: Simple Queueing Service (like Kafka) - fully managed message queuing service, makes it easy to decouple and scale microservices, dist systems, and serverless apps.
 
-**Amazon Kinesis**: makes it easy to collect, process, and analyze video and data streams in real time. real-time processing of streaming data at massive scale.
+**[Kinesis](Kinesis.md)**: makes it easy to collect, process, and analyze video and data streams in real time. real-time processing of streaming data at massive scale.
     - Data Firehose
         - Load data streams into AWS data stores.
     - Video Streams
@@ -70,8 +70,9 @@ Sharding process
     - Data Analytics
         - Process and analyze streaming data using SQL or Java.
 
-**KCL Library**: Kinesis Consumer Lib
-**KPL Library**: Kinesis Producer Lib
+**[Kinesis Client Library](Kinesis.md#KCL---Kinesis-Client-Library)**
+**[Kinesis Producer Library](Kinesis.md#KCL---Kinesis-Producer-Library)**
+
 
 ## ML
 **AWS Rekognition**:
@@ -86,11 +87,11 @@ SQL, Query Types
 
 
 ## Analytics & Monitoring
-**Athena**: Analytics, analyze unstructured, semi-structured and structred data in s3.
+**[Athena](Athena.md)**: Analytics, analyze unstructured, semi-structured and structred data in s3.
 
-**Quicksight**: BI analytics service to build visualizations, perform ad hoc analysis, and quickly get BI from data. Seamlessly discovers AWS data sources, enables orgs to scale to 100_000's of users, and delivers fast/responsive query perf by using in-mem engine (SPICE).
+**[Quicksight](Quicksight.md)**: BI analytics service to build visualizations, perform ad hoc analysis, and quickly get BI from data. Seamlessly discovers AWS data sources, enables orgs to scale to 100_000's of users, and delivers fast/responsive query perf by using in-mem engine (SPICE).
 
-**CloudWatch**: reliable, scalable, flexible, real-time monitoring solution you can start using within minutes. No longer need to setup, manage, and scale your own monitoring infra.
+**[CloudWatch](CloudWatch.md)**: reliable, scalable, flexible, real-time monitoring solution you can start using within minutes. No longer need to setup, manage, and scale your own monitoring infra.
     - CloudWatch Events
         - Send system events from AWS resources to AWS Lambda functions, Amazon SNS topics, streams in Amazon Kinesis, and other target types.
     - CloudWatch Logs
@@ -130,7 +131,7 @@ Client side vs server side
 
 **API Gateway**
 **SNS** - Simple Notification Serfice (Email, Text, etc..)
-**EMR** - Easily Run and Scale Apache Spark, Hadoop, HBase, Presto, Hive, and other Big Data Frameworks (EMRFS)
+**[EMR](EMR.md)** - Easily Run and Scale Apache Spark, Hadoop, HBase, Presto, Hive, and other Big Data Frameworks (EMRFS)
 
 #### Topics
 Elastic Transcoder
@@ -148,8 +149,7 @@ Enhanced Fan-out/Fan-in
 
 ## Certifications
 
-**AWS Data Specialist**
-
+**AWS Data Specialist**: [Notes](BigData_Test_Notes.md)
 
 **AWS TCO and Cloud Economics (Digital)**
 - [x] [Mod 1: What Is TCO?](training/MOD1_TCO.md#Mod-1:-What-is-TCO?)

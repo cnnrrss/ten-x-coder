@@ -7,7 +7,6 @@ DynamoDB provides two read/write capacity modes for each table: ondemand and pro
 
 DynamoDB global tables replicate your data automatically across your choice of AWS Regions and automatically scale capacity to accommodate your workloads. With global tables, your globally distributed requests can access data locally in the selected regions to get single- digit millisecond read and write performance
 
-
 ### Auto-Scaling
 
 Metrics are published to CloudWatch
@@ -28,3 +27,19 @@ The CloudWatch alarm invokes Application Auto Scaling to evaluate your scaling p
 
 ### rWCU (replicated write request units)
 If you enable on-demand mode on a global table, and you perform **10 writes** to a **local table** that is replicated in **two additional Regions**, you will consume **60 write request units** (10 + 10 + 10 = 30; 30 x 2 = 60).
+
+
+### Indexes
+
+Allow for quicker lookups, way to query it by primary key (hash value).
+
+**Sparse** - For any item in a table, DynamoDB writes a corresponding index entry only if the index sort key value is present in the item. If the sort key doesn't appear in every table item, the index is said to be sparse. Sparse indexes are useful for queries over a small subsection of a table. For example, suppose that you have a table where you store all your customer orders, with the following key attributes:
+
+```
+Partition key: CustomerId
+Sort key: OrderId
+```
+
+**Global secondary index** — An index with a partition key and a sort key that can be different from those on the base table. A global secondary index is considered "global" because queries on the index can span all of the data in the base table, across all partitions. A global secondary index has no size limitations and has its own provisioned throughput settings for read and write activity that are separate from those of the table.
+
+**Local secondary index** — An index that has the same partition key as the base table, but a different sort key. A local secondary index is "local" in the sense that every partition of a local secondary index is scoped to a base table partition that has the same partition key value. As a result, the total size of indexed items for any one partition key value can't exceed 10 GB. Also, a local secondary index shares provisioned throughput settings for read and write activity with the table it is indexing.

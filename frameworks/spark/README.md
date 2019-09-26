@@ -26,7 +26,6 @@ Spark uses master/slave architecture, the master coordinates and distributes the
 **Spark SQL** and Data frames library are for performing SQL operations on data.
 **Spark stream** library is for real-time streaming data processing.
 
-
 ### SDKs
 
 Scala, Java, Python

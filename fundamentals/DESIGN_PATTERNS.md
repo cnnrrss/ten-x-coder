@@ -1,14 +1,15 @@
 # Design Patterns
 
+
 Types:
 - Creation
 - Structural
 - Behavioral.
 
-Different from an algorithm because applying the same pattern to two separate problems could yield a different result. An algorithm is more like a recipe
-https://en.wikipedia.org/wiki/Software_design_pattern
+    Different from an algorithm because applying the same pattern to two separate problems could yield a different result. An algorithm is more like a recipe
+    https://en.wikipedia.org/wiki/Software_design_pattern
 
-There are also "domain specific" patterns:
+    There are also "domain specific" patterns:
 - Web
 - Ui design patterns
 - Platform specific
@@ -16,8 +17,19 @@ There are also "domain specific" patterns:
 - MVVM
 - etc..
 
+
+### Fluent-Style
+iA fluent interface is a method for designing OO APIs based extensively on **method chaining** with the goal of making the readability of the source code close to that of ordinary written prose. \
+Essentially creating a domain-specific language within the interface. An example is JMock testing framework:
+
+```bash
+mock.expects(once()).method("m").with( or(stringContains("hello"),
+                                          stringContains("howdy")) );
+```
+
+
 ### Creation
-**Factory Method**
+i**Factory Method**
 Define an interface for creating a single object, but let subclasses decide which class to instantiate. Factory Method lets a class defer instantiation to subclasses.
 
 **Abstract Factory**
@@ -31,7 +43,7 @@ Specify the kinds of objects to create using a prototypical instance, and create
 
 **Singleton**
 Ensure a class has only one instance, and provide a global point of access to it.
-	NOTE: Normally makes it difficult to test.
+NOTE: Normally makes it difficult to test.
 
 **Dependency Injection**
 A class accepts the objects it requires from an injector instead of creating the objects directly.
@@ -69,14 +81,14 @@ Decouple an abstraction from its implementation allowing the two to vary indepen
 **Observer**
 **State**
 **Strategy Pattern**
-	[Go example](https://github.com/tmrts/go-patterns/blob/master/behavioral/strategy.md)
+[Go example](https://github.com/tmrts/go-patterns/blob/master/behavioral/strategy.md)
 
 Strategy behavioral design pattern enables an algorithm's behavior to be selected at runtime.
 
 It defines algorithms, encapsulates them, and uses them interchangeably.
 
 Implementation of an interchangeable operator object that operates on integers.
-	
+
 Rules of Thumb:
 - Strategy pattern is similar to Template pattern except in its granularity.
 - Strategy pattern lets you change the guts of an object. Decorator pattern lets you change the skin
@@ -90,7 +102,7 @@ Rules of Thumb:
 **Monitor**
 **Read-Write Lock**
 **Semaphore**
-
+i
 #### Concurrency Patterns
 **N-Barrier**
 **Bounded Parallelism**
@@ -100,7 +112,7 @@ Rules of Thumb:
 **Reactor**
 **Parallelism**
 **Producer / Consumer**
-
+i
 ### Messaging Patterns (algorithms?)
 **Fan-In**
 Funnels tasks to a work sink (e.g. server)
@@ -117,17 +129,17 @@ Distributes tasks among workers (e.g. producer)
 ### Stability Patterns
 **Bulkheads**
 **Circuit-Breaker**
- 	[Go example](https://github.com/sony/gobreaker)
+[Go example](https://github.com/sony/gobreaker)
 **Deadline**
 **Fail-Fast**
 **Handshaking**
 **Steady-State**
-
+i
 ### Profiling Patterns
 **Timing Functions**
 
 ### Idioms
-**Functional Options**
+*i*Functional Options**
 Functional options are a method of implementing clean/eloquent APIs in Go. Options implemented as a function set the state of that option.
 
 ### Anti-Patterns

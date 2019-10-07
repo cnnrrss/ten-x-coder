@@ -1,5 +1,13 @@
 # AWS Amazon ML
 
+**Comprehend** - NLP to extract insights about the content of documents.
+
+**Rekognition** - Add image and video analysis to your applications. Provide image/vid to the Rekognition API, servce can identify objects, people, text, scenes, and activities.
+
+**Polly** - cloud service that converts text into lifelike speech.
+
+**SageMaker** - fully managed machine learning service. Data scientists
+
 Machine Learning web service offers _2 types of predictions_: 
 - **Batch Predictions**: asynchronously generate predictions for multiple input data observations
 - **Real-time Predictions**: synchronously generate predictions for individual data observations

@@ -9,6 +9,23 @@ size from gigabytes to exabytes. Redshift uses columnar storage, data compressio
 
 Amazon Redshift uses machine learning to deliver high throughout based on your workloads. Redshift utilizes sophisticated algorithms to predict incoming query run times, and assigns them to the optimal queue for the fastest processing.
 
+
+### Redshift Spectrm
+- Query the data in its original format directly from Amazon S3 in same region
+- Spectrum supports structured and semi-structures data formats like: (avro, parquet, txtfile, sequencefile, rcfile, grok, opencsv, orc, ion, regesserde, json)
+
+- Supports compressions and types (gzip - .gz, Snappy - .snappy, bzip2 - .bz2)
+
+### Workload Management WLM
+
+- Configure up to **8** query queues and set the # of queries that can run in each queue concurrently.
+- Setup rules to route queries to particular queues based on the user running the query or labels that you specify.
+- Configure memory allocated to each queue, so that large queries run in queues with more memory.
+- WLM timeout property to limit long-running queries.
+
+**Short Query Acceleration (SQA)**: prioritizes selected short-running queries ahead of longer-running queries in a dedicated space.
+- If you enable SQA, you can reduce or eliminate WLM queues that are dedicated to running short queries.
+
 ### Tuning
 
 You should assign distribution styles to achieve two goals:
@@ -18,7 +35,7 @@ When the rows for joining columns are on the same slices, less data needs to be 
 - Distribute data evenly among the slices in a cluster.
 If data is distributed evenly, workload can be allocated evenly to all the slices.
 
-##### Distribution Styles
+#### Distribution Styles
 
 When you create a table, you designate one of three distribution styles: **KEY**, **ALL**, or **EVEN**. [Tutorial](https://docs.aws.amazon.com/redshift/latest/dg/tutorial-tuning-tables-distribution.html)
 

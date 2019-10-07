@@ -24,6 +24,12 @@ A Kinesis data stream is a set of shards. Each **shard** has a sequence of **dat
 
 **Data Streams API** -  Data Streams API can be consumer to the Data Stream but cannot deaggregate the data.
 
+- Future Objects: Kinesis Streams provide capabilities to use Future objects to validate UserRecords. No need to complicate code by storing memory/transient storage. Examine failures using the Future objects that are returned from addUserRecord method.
+
+- Automatic and configurable retry mechanism
+
+- Time-to-live: on records if records could not be inserted after RecordMaxBufferedTime, time to-live can be extended if UserRecords could not be inserted into stream in time.
+
 #### Shards
 
 Each shard has a sequence of data records. A shard is a uniquely identified sequence of data records in a stream. A stream is composed of one or more shards, each of which has a **fixed unit of capacity**.
@@ -31,6 +37,9 @@ Each shard has a sequence of data records. A shard is a uniquely identified sequ
 . Each shard can support up to **5 transactions per second** for **reads**, up to a maximum total data read rate of **2 MB per second** and up to **1,000 records per second** for **writes**, up to a maximum total data write rate of **1 MB per second** (including partition keys). 
 
 The total capacity of the stream is the sum of the capacities of its shards.
+
+- **Merge cold shards** to make use of their unused capacity.
+- Merge the shards that receive **less data**
 
 #### Partition Key
 A **partition key** is used to **group data by shard** within a stream.
@@ -85,6 +94,8 @@ Consumer can be implemented with
 - Kinesis Connector Library
     - Used to connect Kinesis with other services on AWS. KCL is required to use this Library
 - Kinesis Data Streams API (but KCL is recommended)
+- KCL uses a unique Amazon DynamoDB table to keep track of the application's state.
+- KCL uses name of Kinesis Data Streams application to create the name of the table, each application name must be unique.
 
 ## Data Firehouse
 
@@ -98,6 +109,8 @@ Kinesis Data Firehose provides the following Lambda blueprints that you can use 
 • **Kinesis Data Firehose Process Record Streams as source** — Accesses the Kinesis Data Streams records in the input and returns them with a processing status. \
 • **Kinesis Data Firehose CloudWatch Logs Processor** — Parses and extracts individual log events from records sent by CloudWatch Logs subscription filters.
 
+
+• **Record format Conversion**: Firehose can convert JSON to Parquet or Apache ORC format before storing in S3. These formats are columnar that save space and enable faster queries compared to row-oriented formats like JSON.
 
 ## KCL - Kinesis Client Library
 
@@ -142,6 +155,15 @@ Kinesis Streams provide capabilities to use Future objects to validate UserRecor
 
 Time-to-live records need to be increases if the UserRecords could not inserted into stream in time.
 
+Streaming data can directy be delivered into ElasticSearch Domain.
+
+The transformation failures and delivery failures are loaded into processing-failed and errors folders in same S3 bucket.
+
+
+**KPL User Record** - KPL user record is a blob of data that has meaning to the user. (ex: UI event on a website or a log entry from a web server)
+
+`KPL user record != Kinesis Data stream record`
+
 ### Kinesis Connector Library 
 
 Helps java developers integrate Kinesis Streams with other AWS services.
@@ -155,3 +177,13 @@ Each Amazon Kinesis connector application is a pipeline that understands how rec
 Kinesis Agent is a stand-alone Java application that can easily collect and send data to Kinesis Data Streams. 
 
 The agent can continuously monitor set of fles (more for log fles) and Aggregation of data is not possible.
+
+#### Kinesis Data Analytics
+
+**Stagger Windows**: A query that aggregates data using keyed time-based windows that open as data arrives. The keys allow for multiple overlapping windows. This is the recommended way to aggregate data using time-based windows, because Stagger Windows reduce late or out-of-order data compared to Tumbling windows.
+
+**Tumbling Windows**: A query that aggregates data using distinct time-based windows that open and close at regular intervals.
+
+**Sliding Windows**: A query that aggregates data continuously, using a fixed time or rowcount interval.
+
+**Continuous Query**: query over a stream executes continuously over streaming data. Enables scenarios such as ability for applications to query the stream and generate alerts.

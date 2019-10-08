@@ -7,6 +7,5 @@
 - Assign a **policy** attached to the certificate and Define unique indentifier for the thing (device).
 - Define set of attributes for the thing, including existing thing **types** and **groups**
 
-
 ### Rule actions
 AWS IOT rule actions are used to specifiy what to do when a rule is triggered. You can define actions to write data to DynamoDB or Kinesis Streams. Or invoke lambda, but the rule actions aren't required as part of provisioning.

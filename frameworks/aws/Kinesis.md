@@ -61,7 +61,7 @@ You can increase the retention perioud up to **168 hours (7 days)**
 #### Data Records
 A data record is the unit of data stored in a Kinesis data stream. 
 
-Composed of: \
+Composed of:
 - Sequence number
 - Partition key
 - Data blob (immutable sequence of bytes)
@@ -81,7 +81,7 @@ Kinesis Data Streams uses **AWS KMS master keys** for encryption
 
 Producers are the systems sending data.
 You can send data using:
-- KPL ( Kinesis Producer Library)
+- KPL (Kinesis Producer Library)
 - Kinesis Agent
 - Kinesis API
 
@@ -96,73 +96,6 @@ Consumer can be implemented with
 - Kinesis Data Streams API (but KCL is recommended)
 - KCL uses a unique Amazon DynamoDB table to keep track of the application's state.
 - KCL uses name of Kinesis Data Streams application to create the name of the table, each application name must be unique.
-
-## Data Firehouse
-
-Lambda Blueprints
-
-Kinesis Data Firehose provides the following Lambda blueprints that you can use to create a Lambda function for data transformation.
-
-• **General Firehose Processing** — Contains the data transformation and status model described in the previous section. Use this blueprint for any custom transformation logic. \
-• **Syslog to JSON** — Parses and converts Syslog lines to JSONobjects, using predefined JSON field names. \
-• **Syslog to CSV** — Parses and converts Syslog lines to CSV format. \
-• **Kinesis Data Firehose Process Record Streams as source** — Accesses the Kinesis Data Streams records in the input and returns them with a processing status. \
-• **Kinesis Data Firehose CloudWatch Logs Processor** — Parses and extracts individual log events from records sent by CloudWatch Logs subscription filters.
-
-
-• **Record format Conversion**: Firehose can convert JSON to Parquet or Apache ORC format before storing in S3. These formats are columnar that save space and enable faster queries compared to row-oriented formats like JSON.
-
-## KCL - Kinesis Client Library
-
-The KCL performs the following tasks:
-
-- Connects to the stream
-- Enumerates the shards
-- Coordinates shard associations with other workers (if any)
-- Instantiates a record processor for every shard it manages
-- Pulls data records from the stream
-- Pushes the records to the corresponding record processor
-- Checkpoints processed records
-- Balances shard-worker associations when the worker instance count changes
-- Balances shard-worker associations when shards are split or merged
-
-KCL uses a unique Amazon DynamoDB table to keep track of the application's state.
-
-KCL uses the name of the Amazon Kinesis Data Streams application to create the name of the table, each application name must be unique.
-
-Can be monitored with CloudWatch.
-
-#### Enhanced Fan-Out
-
-This feature enables consumers to receive records from a stream with throughput of up to **2 MiB of data per second** per shard. 
-
-Throughput is **dedicated**, which means that consumers that use enhanced fan-out **don't have to contend with other consumers** that are receiving data from the stream.
-
-
-## KPL - Kinesis Producer Library
-
-https://docs.aws.amazon.com/streams/latest/dev/developing-producers-with-kpl.html
-
-Acts as an intermediary between your application and the Kinesis Data Streams API.
-
-KPL simplifes producer application development
-and also building batch of aggregation of user records by increasing payload size and improve
-throughput and optimize costs.
-
-Validate the transaction by checking the successful insert into the stream by embedding automatic and confgurable retry mechanism
-
-Kinesis Streams provide capabilities to use Future objects to validate UserRecords. No need to complicate the code by storing in memory/transient storage.
-
-Time-to-live records need to be increases if the UserRecords could not inserted into stream in time.
-
-Streaming data can directy be delivered into ElasticSearch Domain.
-
-The transformation failures and delivery failures are loaded into processing-failed and errors folders in same S3 bucket.
-
-
-**KPL User Record** - KPL user record is a blob of data that has meaning to the user. (ex: UI event on a website or a log entry from a web server)
-
-`KPL user record != Kinesis Data stream record`
 
 ### Kinesis Connector Library 
 

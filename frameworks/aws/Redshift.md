@@ -9,6 +9,13 @@ size from gigabytes to exabytes. Redshift uses columnar storage, data compressio
 
 Amazon Redshift uses machine learning to deliver high throughout based on your workloads. Redshift utilizes sophisticated algorithms to predict incoming query run times, and assigns them to the optimal queue for the fastest processing.
 
+### Data Sources
+
+You can load data from text files in an Amazon S3 bucket, in an Amazon EMR cluster, or on a remote host that your cluster can access using an SSH connection. You can also load data directly from a DynamoDB table.
+
+The maximum size of a single input row from any source is 4 MB.
+
+To export data from a table to a set of files in an Amazon S3, use the UNLOAD command.
 
 ### Redshift Spectrm
 - Query the data in its original format directly from Amazon S3 in same region
@@ -64,3 +71,27 @@ Choose sort keys for the SSB tables based on these best practices:
 - If **recent** data is queried **most frequently**, specify the **timestamp column** as the leading column for the sort key.
 - If you do **frequent range filtering** or **equality filtering** on one column, **specify that column** as the sort key.
 - If you frequently **join** a (**dimension**) table, specify the **join column** as the sort key.
+
+### Improving Queries
+
+- Use **CASE Expression** to perform complex aggregations instead of selecting from the same table multiple times.
+
+- **Avoid** using function in query predicates
+
+- **USE** predicates as much as possible to restrict the dataset
+
+- Use a **WHERE** clause to restrict the dataset
+
+- Use **sort keys** in the **GROUP BY** clause to improve aggregations
+
+- **Use subqueries** in cases where one table in the query is used only for predicate conditions and the subquery returns a small number of rows (less than about 200). The following example uses a subquery to avoid joining the LISTING table.
+
+```sql
+select sum(sales.qtysold)
+from sales
+where salesid in (select listid from listing where listtime > '2008-12-26');
+```
+
+- **Avoid** using `select *`. Include only the columns you specifically need.
+
+- In the predicate, use the _least expensive operators_ that you can. [**Comparison Condition**](https://docs.aws.amazon.com/en_pv/redshift/latest/dg/r_comparison_condition.html) operators are preferable to `LIKE` operators. `LIKE` operators are still preferable to `SIMILAR TO` or `POSIX` Operators.

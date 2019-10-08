@@ -4,7 +4,6 @@ Athena is serverless, no infra, setup or maintenance. You pay for the queries yo
 
 You can run ad-hoc queries using ANSI SQL, w/o need to aggregate or load data into Athena.
 
-
 Use Athena to generate reports, explore data w/ BI tools, or SQL clients connected with a JDBC or ODBC driver.
 
 ### Data Formats

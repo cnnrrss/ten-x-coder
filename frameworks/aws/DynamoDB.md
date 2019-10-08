@@ -9,7 +9,8 @@
     - specify how many reads/writes you want per second
 - Fully integrated with IAM
 
-Row = Item in DynamoDB
+Row == Item in DynamoDB
+
 Rows can have different elements, and different number of elements. No Schema at the table level
 
 #### Burst Capacity
@@ -28,7 +29,6 @@ Its on tables that you specify the performance requirements
 
 Eventually Consistent Reads ( Default )
 Strongly Consistent (more cost)
-
 
 This enables DynamoDB to have a fexible schema, so each row can have any number of columns at any point in time.
 
@@ -53,10 +53,8 @@ The CloudWatch alarm invokes Application Auto Scaling to evaluate your scaling p
 - None of the new or existing replica tables in the global table can contain any data.
 ("Local secondary" names is made up)
 
-
 ### rWCU (replicated write request units)
 If you enable on-demand mode on a global table, and you perform **10 writes** to a **local table** that is replicated in **two additional Regions**, you will consume **60 write request units** (10 + 10 + 10 = 30; 30 x 2 = 60).
-
 
 ### Indexes
 

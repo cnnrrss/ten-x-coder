@@ -60,7 +60,7 @@ If you enable on-demand mode on a global table, and you perform **10 writes** to
 
 Allow for quicker lookups, way to query it by primary key (hash value).
 
-**Sparse** - For any item in a table, DynamoDB writes a corresponding index entry only if the index sort key value is present in the item. If the sort key doesn't appear in every table item, the index is said to be sparse. Sparse indexes are useful for queries over a small subsection of a table. For example, suppose that you have a table where you store all your customer orders, with the following key attributes:
+**Sparse** - For any item in a table, DynamoDB writes a corresponding index entry only if the index sort key value is present in the item. If the sort key doesn't appear in every table item, the index is said to be sparse. _Sparse indexes are useful for queries over a small subsection of a table._ For example, suppose that you have a table where you store all your customer orders, with the following key attributes:
 
 ```
 Partition key: CustomerId

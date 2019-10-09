@@ -11,6 +11,11 @@ You can add data to an Amazon Kinesis data stream via PutRecord and PutRecords o
 
 ### Kinesis Data Streams
 
+Kineses Data Streams record is an _instance_ of the record data structure defined by the KDS service API. KPL user record and KDS stream record are **different** A KDS record contains:
+- partition key
+- sequence number
+- blob of data.
+
 A Kinesis data stream is a set of shards. Each **shard** has a sequence of **data records**. Each **data record** has a sequence number that is assigned by Kinesis Data Streams
 
 ```

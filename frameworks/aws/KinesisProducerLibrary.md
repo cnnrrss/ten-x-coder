@@ -22,3 +22,8 @@ The transformation failures and delivery failures are loaded into processing-fai
 **KPL User Record** - KPL user record is a blob of data that has meaning to the user. (ex: UI event on a website or a log entry from a web server)
 
 `KPL user record != Kinesis Data stream record`
+
+### Improving of latency
+- Batching of records: refers to performing a single action on multiple items instead of repeatedly performing the action on each individual item. 
+- Aggregation: Storing multiple records within a single Kinesis Data Streams record
+- Collection: Using the API operation PutRecords to send multiple Kinesis Data Streams records to one or more shards in your Kinesis data stream.

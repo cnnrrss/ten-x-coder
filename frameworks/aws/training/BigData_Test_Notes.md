@@ -1,3 +1,5 @@
+Test1
+- 53-57, 61, 62, 64-66, 69
 # Big Data Test Cheatsheet
 
 Categories:
@@ -61,7 +63,7 @@ support full workloads
 1.7) There are 2 consumers that are using enhanced fan-out to receive data from the stream. Please detail the implementation speci#cs of
 consumers. 
 - An enhanced fan-out pipe provides up to 2 MiB/sec of data per shard
-- consumers can be built out KCL library or API
+- Consumers can be built out KCL library or API
 - KCL automatically subscribes to consumer to all the shards of the stream
 
 1.17) What kind of tasks are supported by AWS Glue?
@@ -102,7 +104,7 @@ One of the key requirements includes ORDER_FCT and PART_DIM are joined together 
 related queries. ORDER_FCT has many other dimensions to support analysis.
 - Distribute the ORDER_FCT and PART_DIM on same key with KEY distribution
 
-13) 2 hot shards, what is basic re-shard strategy?
+1.13) 2 hot shards, what is basic re-shard strategy?
 - SHARD 1 need to be split as SHARD 1A, 1B, SHARD2 into SHARD2A 382..410 and SHARD B as 411..454
 
 
@@ -127,6 +129,10 @@ related queries. ORDER_FCT has many other dimensions to support analysis.
 
 1.19) Extend search, document management, integration into Data Lake built on EMR with existing stream:
 - data collection, pre-processing, and writing of data into data streams using Kinesis Agents and reading of data using enhanced fan-out consumers built using kinesis Applications and writing to downstream applications using connector libraries. New consumer applications need to be added.
+
+1.66) What service does AWS propose to address migration of databases?
+- AWS Database Migration Serice (AWS DMS)
+- AWS Schema Conversion
 
 ## Data Security
 

@@ -2,12 +2,31 @@
 
 [Key Concepts](https://docs.aws.amazon.com/streams/latest/dev/key-concepts.html)
 
-You can add data to an Amazon Kinesis data stream via PutRecord and PutRecords operations, Amazon Kinesis Producer Library (KPL), or Amazon Kinesis Agent.
+### Producers
 
-**note how KPL and kinesis agent are different.KPL is only available on Java and C+
+Producers are the systems sending data.
+You can send data using:
+- **Kinesis API & PutRecord** and PutRecords operations
+- **Amazon Kinesis Producer Library** (KPL)
+- **Amazon Kinesis Agent**
+
+**note how KPL and kinesis agent are different. KPL is only available on Java and C+
+
+### Consumers
+
+Kinesis Stream consumers can be implemented with:
+
+- **Kinesis Client Library ( KCL )**
+    - This is a pre-built library that helps you easily build Amazon Kinesis Applications for reading and processing data from an Amazon Kinesis stream.
+    - This library handles complex issues such as adapting to changes in stream volume, load-balancing streaming data, coordinating distributed services, and processing data with fault-tolerance, enabling you to focus on business logic while building applications.
+- **Kinesis Connector Library**
+    - Used to connect Kinesis with other services on AWS. KCL is required to use this Library
+- **Kinesis Data Streams API** (but KCL is recommended)
 
 ## Kinesis Streams
 ![](../../assets/amazon_kinesis_streams.png)
+
+_TODO_...
 
 ### Kinesis Data Streams
 
@@ -16,7 +35,7 @@ Kineses Data Streams record is an _instance_ of the record data structure define
 - sequence number
 - blob of data.
 
-A Kinesis data stream is a set of shards. Each **shard** has a sequence of **data records**. Each **data record** has a sequence number that is assigned by Kinesis Data Streams
+A Kinesis data stream is a set of shards. Each **shard** has a sequence of **data records**. Each **data record** has a **sequence number** that is assigned by Kinesis Data Streams
 
 ```
 - Shard 1
@@ -37,7 +56,7 @@ A Kinesis data stream is a set of shards. Each **shard** has a sequence of **dat
 
 #### Shards
 
-Each shard has a sequence of data records. A shard is a uniquely identified sequence of data records in a stream. A stream is composed of one or more shards, each of which has a **fixed unit of capacity**.
+Each shard has a _sequence_ of **data records**. A shard is a uniquely identified sequence of data records in a stream. A stream is composed of one or more shards, each of which has a **fixed unit of capacity**.
 
 . Each shard can support up to **5 transactions per second** for **reads**, up to a maximum total data read rate of **2 MB per second** and up to **1,000 records per second** for **writes**, up to a maximum total data write rate of **1 MB per second** (including partition keys). 
 
@@ -56,6 +75,8 @@ It uses the **partition key** that is associated with each data record to determ
 Partition keys are Unicode strings with a **maximum** length limit of **256 bytes**.
 
 #### Sequence Number
+
+_TODO_...
 
 #### Retention Period
 The retention period is set at the stream level. The **retention period** is the length of time that data records are accessible after they are added to the stream. 
@@ -82,25 +103,15 @@ Kinesis Data Streams uses **AWS KMS master keys** for encryption
 
 ### Kinesis Video Streams
 
-### Producers
+- Video streams stores incoming media data as **chunks**
+- Each **chunk** consists of:
+    - media metadata
+    - **fragment**
+    - video stream specific metadata (fragment #, server / producer timestamps)
+- Media data in the fragments is packed into a structured format such as **Matroska (MKV)**
 
-Producers are the systems sending data.
-You can send data using:
-- KPL (Kinesis Producer Library)
-- Kinesis Agent
-- Kinesis API
-
-### Consumers
-
-Consumer can be implemented with
-
-- Kinesis Client Library ( KCL )
-    - This is a pre-built library that helps you easily build Amazon Kinesis Applications for reading and processing data from an Amazon Kinesis stream. This library handles complex issues such as adapting to changes in stream volume, load-balancing streaming data, coordinating distributed services, and processing data with fault-tolerance, enabling you to focus on business logic while building applications.
-- Kinesis Connector Library
-    - Used to connect Kinesis with other services on AWS. KCL is required to use this Library
-- Kinesis Data Streams API (but KCL is recommended)
-- KCL uses a unique Amazon DynamoDB table to keep track of the application's state.
-- KCL uses name of Kinesis Data Streams application to create the name of the table, each application name must be unique.
+- Server-side encryption is always enabled on Kinesis Video Streams
+- Server-side encryption using KMS or CMK allows encrypting data at rest in Vid streams
 
 ### Kinesis Connector Library 
 
@@ -110,7 +121,7 @@ The library provides connectors to various AWS services including S3.
 
 Each Amazon Kinesis connector application is a pipeline that understands how records from Kinesis Stream will be handled.
 
-#### Kinesis agent
+### Kinesis agent
 
 Kinesis Agent is a stand-alone Java application that can easily collect and send data to Kinesis Data Streams. 
 
@@ -124,4 +135,4 @@ The agent can continuously monitor set of fles (more for log fles) and Aggregati
 
 **Sliding Windows**: A query that aggregates data continuously, using a fixed time or rowcount interval.
 
-**Continuous Query**: query over a stream executes continuously over streaming data. Enables scenarios such as ability for applications to query the stream and generate alerts.
+**Continuous Query**: query over a stream executes continuously over streaming data. Enables scenarios such as ability for applications to query the stream and generate alerts. 

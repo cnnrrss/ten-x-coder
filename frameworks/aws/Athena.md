@@ -1,19 +1,21 @@
 # Athena
 
-Athena is serverless, no infra, setup or maintenance. You pay for the queries you run (Like BQ). Athena scales automagically-executing queries in parallel-so results are fast, even on large datasets and complex queries.
+Athena is serverless, no infra, setup or maintenance. You pay for the queries you run (Like BQ). 
 
-You can run ad-hoc queries using ANSI SQL, w/o need to aggregate or load data into Athena.
+Athena scales automagically-executing queries in parallel-so results are fast, even on large datasets and complex queries.
 
-Use Athena to generate reports, explore data w/ BI tools, or SQL clients connected with a JDBC or ODBC driver.
+You can run **ad-hoc queries** using ANSI SQL, w/o need to aggregate or load data into Athena.
+
+Use Athena to generate reports, explore data w/ BI tools, or SQL clients connected with a **JDBC** or **ODBC** driver.
 
 ### Data Formats
 
 Athena helps you analyze unstructured, semi-structured and structured data stored in S3. 
 
 Examples:
-    - CSV
-    - JSON
-    - Columnar formats: Apache Parquet, Apache ORC
+- CSV
+- JSON
+- _Columnar_: Apache Parquet, Apache ORC
 
 ### Integrations
 

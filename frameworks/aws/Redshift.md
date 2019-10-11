@@ -9,6 +9,30 @@ size from gigabytes to exabytes. Redshift uses columnar storage, data compressio
 
 Amazon Redshift uses machine learning to deliver high throughout based on your workloads. Redshift utilizes sophisticated algorithms to predict incoming query run times, and assigns them to the optimal queue for the fastest processing.
 
+### System Tables and Views
+
+Amazon Redshift has many **system tables** and **views** that contain information about how the system is functioning. 
+
+You can query these system tables and views the same way that you would query any other database tables. 
+
+There are two types of system tables: STL and STV Tables
+
+System tables and views **do not** usethe same consistency model as regular tables. 
+
+#### Ststem Tables 
+**STL** - system tables are generated from Amazon Redshift log files to provide a history of the system.
+
+**STV** - STV tables are actually virtual system tables that contain snapshots of the current system data.
+- They are based on transient in-mem data and are not persisted to disk
+
+#### System Views 
+
+**SVV** - system viess that contain any reference to transient STV tables
+
+**SVL** - views containing only references to STL tables.
+
+`https://docs.aws.amazon.com/redshift/latest/dg/c_intro_STL_tables.html`
+
 ### Data Sources
 
 You can load data from text files in an Amazon S3 bucket, in an Amazon EMR cluster, or on a remote host that your cluster can access using an SSH connection. You can also load data directly from a DynamoDB table.
@@ -16,6 +40,14 @@ You can load data from text files in an Amazon S3 bucket, in an Amazon EMR clust
 The maximum size of a single input row from any source is 4 MB.
 
 To export data from a table to a set of files in an Amazon S3, use the UNLOAD command.
+
+
+### Recommendations
+
+- Addressing uncompressed storage for a singletable is a one-time optimization that _requires_ the table to be rebuilt.
+- Consider moving each actively queried db to a separate dedicated cluster.
+    - Can reduce resource contention and improve q perf
+- Skip compression analysis using `COPY`
 
 ### Redshift Spectrm
 - Query the data in its original format directly from Amazon S3 in same region
@@ -32,6 +64,13 @@ To export data from a table to a set of files in an Amazon S3, use the UNLOAD co
 
 **Short Query Acceleration (SQA)**: prioritizes selected short-running queries ahead of longer-running queries in a dedicated space.
 - If you enable SQA, you can reduce or eliminate WLM queues that are dedicated to running short queries.
+
+### Time Seres Tables
+
+- Organize data as a sequenbce of time-series tables for a fixed retention period and create a `UNION ALL` view to mask the fact that data is stored in multi tables
+- In the sequence, each table should be identical but contain data for different time ranges
+- Use `DROP TABLE` instead of running a large-scale `DELETE` and a subsequent `VACUUM` process to reclaim space.
+
 
 ### Tuning
 

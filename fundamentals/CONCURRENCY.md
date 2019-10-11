@@ -21,8 +21,10 @@
 #### Deadlock & Livelock
 - Deadlock: multiple threads of a program waiting for the other to finish. Blocked for ever.
 - Livelock: two resources continually try to get out of each others way but without moving the process forward. (Two people coming at each other in hallway)
+
 #### Resources of a process
 - CPU/Memory/Storage/etc..
+
 #### Scheduling
 
 **Worker Pools:**

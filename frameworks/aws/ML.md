@@ -6,9 +6,11 @@ Different types of logistic regression is implemented as Binary classification, 
 
 **Rekognition** - Add image and video analysis to your applications. Provide image/vid to the Rekognition API, servce can identify objects, people, text, scenes, and activities.
 
+**Lex** - building conversational interfaces for applications using voice and text. Same engine that powers Alexa is now available to any developer, enabling natural language chatbots.
+
 **Polly** - cloud service that converts text into lifelike speech. Use policy to develop apps that increase engagement and accessibility.
 
-**SageMaker** - fully managed machine learning service. Data scientists
+**SageMaker** - fully managed machine learning service. Data scientists can quickly and easily build and train machine learning models.
 
 Machine Learning web service offers _2 types of predictions_: 
 - **Batch Predictions**: asynchronously generate predictions for multiple input data observations
@@ -16,9 +18,9 @@ Machine Learning web service offers _2 types of predictions_:
 
 ### Binary Classification Model
 
-Ex: Will customer buy this product? -> Yes, no (hence binary classification)
+`Ex: Will customer buy this product? -> Yes / No` \
+_(hence binary classification)_
 
-##### Training
 To train **binary classification** models, Amazon ML uses industry-standard learning algorithim known as **logistic regression**.
 
 Amazon ML provides industry-standard accuracy metric for **binary classification** models called **Area Under the (Receiver Operating Characteristic) Curve (AUC)**.
@@ -40,4 +42,4 @@ In Amazon Machine Learning, there are four hyperparameters that you can set:
 
 Prevent overfitting the models by using cross validation techniques.
 
-Overfitting occurs when a model has memorized patterns that occur in the training and evaluation datasources, but has failed to generalize the patterns in the data.
+**Overfitting** occurs when a model has memorized patterns that occur in the training and evaluation datasources, but has failed to generalize the patterns in the data.

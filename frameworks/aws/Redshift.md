@@ -134,3 +134,9 @@ where salesid in (select listid from listing where listtime > '2008-12-26');
 - **Avoid** using `select *`. Include only the columns you specifically need.
 
 - In the predicate, use the _least expensive operators_ that you can. [**Comparison Condition**](https://docs.aws.amazon.com/en_pv/redshift/latest/dg/r_comparison_condition.html) operators are preferable to `LIKE` operators. `LIKE` operators are still preferable to `SIMILAR TO` or `POSIX` Operators.
+
+#### Best Practices - Upsert
+
+- **Upsert** - Redshift **doesn't** support a single merge statement to insert and update data from a single data source.
+
+- **Utilize staging table first** - Efficiently update and insert new data by loading your data into a stagign table first.

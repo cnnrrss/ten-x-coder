@@ -1,5 +1,6 @@
 # Amazon Elastic Search
 
+Managed service that makes it easy to deploy, operate, and scale Elasticsearch clusters in the AWS Cloud. ES is a popular open-source search and analytics engine for: log analytics, real-time app monitoring, and clickstream analysis.
 
 ### Encryption
 

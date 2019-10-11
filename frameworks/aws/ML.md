@@ -23,15 +23,21 @@ _(hence binary classification)_
 
 To train **binary classification** models, Amazon ML uses industry-standard learning algorithim known as **logistic regression**.
 
-Amazon ML provides industry-standard accuracy metric for **binary classification** models called **Area Under the (Receiver Operating Characteristic) Curve (AUC)**.
+`Test`: Amazon ML provides industry-standard accuracy metric for **binary classification** models called **Area Under the (Receiver Operating Characteristic) Curve (AUC)**.
 
 ### Multiclass Classification Model
 
-ML models for multiclass classifcation problems allow you to generate predictions for multiple classes. In Amazon ML, the **macro-average F1 score** is used to evaluate the predictive accuracy of a multiclass metric.
+(predict one of more than two outcomes)
+
+ML models for multiclass classification problems allow you to generate predictions for **multiple classes**.
+
+`Test`: Amazon ML uses the **macro-average F1 score** to evaluate the predictive accuracy of a multiclass metric.
 
 ### Regression Model
 
-ML models for regression problems predict a numeric value. Amazon ML uses the industry standard **Root Mean Square Error (RMSE)** metric.
+ML models for regression problems predict a **numeric value**. 
+
+`Test`: Amazon ML uses the industry standard **Root Mean Square Error (RMSE)** metric.
 
 ### Hyperparameters / Overfitting
 In Amazon Machine Learning, there are four hyperparameters that you can set: 

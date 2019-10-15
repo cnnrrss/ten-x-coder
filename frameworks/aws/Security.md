@@ -5,7 +5,7 @@
 
 - Users _inbound_ access to an Amazon Redshift cluster can be managed through **security groups**
 
-- **Access Management **to Redshift cluster can be managed through **IAM**
+- **Access Management** to Redshift cluster can be managed through **IAM**
 
 
 ### Encryption in-transit

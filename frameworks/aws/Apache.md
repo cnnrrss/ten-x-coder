@@ -25,7 +25,7 @@ EMR service provides various apps under Hadoop ecosystem for big data processing
 
 - **Jupyter Notebook**
 
-- **Phoenix**: OLTP and operational analytics. Allowing you to use standard SQL queries and JDBC APIs to work with an Apache HBase backing store.
+- **Phoenix**: OLTP (Online Transaction Processing) and operational analytics. Allowing you to use standard SQL queries and JDBC APIs to work with an Apache HBase backing store.
 
 - **TensorFlow**: an open-source symbolic math library for machine intelligence and deep learning applications. 
 

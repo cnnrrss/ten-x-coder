@@ -15,7 +15,6 @@ Streaming data can directy be delivered into **ElasticSearch Domain**.
 
 The transformation failures and delivery failures are loaded into **processing-failed** and **errors** folders in **same S3 bucket**.
 
-
 **KPL User Record** - KPL user record is a blob of data that has meaning to the user. (ex: UI event on a website or a log entry from a web server)
 
 `KPL user record != Kinesis Data stream record`

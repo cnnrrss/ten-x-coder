@@ -12,6 +12,10 @@ Different types of logistic regression is implemented as Binary classification, 
 
 **SageMaker** - fully managed machine learning service. Data scientists can quickly and easily build and train machine learning models.
 
+**Transcribe** - audio to text
+
+**Textract** - document text detection and analysis to your applications.
+
 Machine Learning web service offers _2 types of predictions_: 
 - **Batch Predictions**: asynchronously generate predictions for multiple input data observations
 - **Real-time Predictions**: synchronously generate predictions for individual data observations

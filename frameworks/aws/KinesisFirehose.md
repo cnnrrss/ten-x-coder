@@ -21,7 +21,7 @@ Kinesis Data Firehose provides the following Lambda blueprints that you can use 
 Firehose can transform using **Data Transformation** and **Record Format** techniques.
 
 • **General Firehose Processing** — Contains the data transformation and status model described in the previous section. Use this blueprint for any custom transformation logic. \
-• **Appache Log to JSON** — Parses and converts Apache log lines to JSONobjects, using predefined JSON field names. \
+• **Apache Log to JSON** — Parses and converts Apache log lines to JSONobjects, using predefined JSON field names. \
 • **Apache Log to CSV** — Parses and converts Apache log lines to CSV format. \
 • **Syslog to JSON** — Parses and converts Syslog lines to JSONobjects, using predefined JSON field names. \
 • **Syslog to CSV** — Parses and converts Syslog lines to CSV format. \

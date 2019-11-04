@@ -1,6 +1,6 @@
 # Athena
 
-Athena is serverless, no infra, setup or maintenance. You pay for the queries you run (Like BQ). 
+Athena is serverless, no infra, setup or maintenance. You pay for the queries you run (Like BQ).
 
 Athena scales automagically-executing queries in parallel-so results are fast, even on large datasets and complex queries.
 
@@ -26,3 +26,13 @@ Examples:
     - Central metadata store available throughout your AWS account
     - Integrated with the ETL and data discovery features of AWS Glue.
 
+### Permissions
+
+To run queries in Athena, you must have the appropriate permissions for:
+- Athena actions
+- The Amazon S3 locations where the underlying data is stored that you are going to query in Athena
+- The resources that you store in AWS Glue Data Catalog, such as databases and tables, tat you are going to query in Athena
+- The encrypted metadata in the AWS Glue Data Catalog (if you migrated to using that metadata in Athena and the metadata is encrypted)
+
+### Encryption Types
+- SSE-KMS, CSE-KMS or SSE-S3

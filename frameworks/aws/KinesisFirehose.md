@@ -1,6 +1,6 @@
 # Kinesis Firehose
 
-Kinesis Data Firehose is a **fully managed** service for delivering real-time streaming data to destinations such as S3, Redshift, ES, and Splunk. With Firehose you don't need to write apps or manage resources.
+Kinesis Data Firehose is a **fully managed** service for delivering real-time streaming data to destinations such as **S3**, **Redshift**, **ES**, and **Splunk**. With Firehose you don't need to write apps or manage resources.
 
 Configure producers to send data to Firehose and it automatically delivers the data to the destination that you specified. Types of producers:
 - Kinesis data stream
@@ -30,3 +30,12 @@ Firehose can transform using **Data Transformation** and **Record Format** techn
 
 
 • **Record format Conversion**: Firehose can convert JSON to Parquet or Apache ORC format before storing in S3. These formats are columnar that save space and enable faster queries compared to row-oriented formats like JSON.
+
+Apply transform of syslog data to JSON and CSV format:
+- Data transformation from syslog to JSON and CSV can be performed through Lambda blueprints
+
+Backup the syslog streaming data:
+- When s3 is selected as destination, an source record S3 backup is enabled, untransformed incoming data can be delivered to a separate S3 bucket
+
+Capture transform failures into same S3 bucket to address audit:
+- Data Transformation failures are delivered to processing-failed folder

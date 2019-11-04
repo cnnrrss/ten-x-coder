@@ -35,11 +35,12 @@ DynamoDB provides some flex in your per-partition throughput provisioning by pro
 
 ## Enterprise Grade
 
-- **ACID transactions** - native, server-side support for transations, simplifying the developer experience and enabling enterprise scale/perf benefits to broad set of mission-critical workloads.
+- **ACID transactions** - native, server-side support for transations, simplifying the developer experience and enabling enterprise scale/perf benefits to broad set of mission-critical workloads
 
-- **Encryption at rest** (by default). Uses keys stored in AWS KMS
+- **Encryption of data at rest** (by default). Uses keys stored in AWS KMS
 
-- **Point-in-time recovery** (PITR) can be enabled for DynamoDB. PITR provides continuous backups, can restore that table to any point in time _to the second_ during the preceding 35 days.
+- **Point-in-time recovery** (PITR) can be enabled for DynamoDB. PITR provides continuous backups, can restore that table to any point in time _to the second_ during the preceding 35 days
+
 - **On-demand backup and restore**. (not encrypted by default)
 
 ### TTL
@@ -69,11 +70,11 @@ For workloads that are less predictable for which you are unsure that you will h
 
 ### Auto-Scaling
 
-Metrics are published to CloudWatch
+Metrics are published to **CloudWatch**
 
-If the table's consumed capacity exceeds your target utilization (or falls below the target) for a specifc length of time, Amazon CloudWatch triggers an alarm using SNS.
+If the table's consumed capacity exceeds your target utilization (or falls below the target) for a specifc length of time, Amazon CloudWatch triggers an alarm using **SNS**.
 
-The CloudWatch alarm invokes Application Auto Scaling to evaluate your scaling policy using SNS which issues an UpdateTable request to adjust your table's provisioned throughput.
+The CloudWatch alarm invokes **Application Auto Scaling** to evaluate your scaling policy using SNS which issues an UpdateTable request to adjust your table's provisioned throughput.
 
 ### Designing a Replica Table / Global Table
 

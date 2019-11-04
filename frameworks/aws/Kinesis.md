@@ -58,14 +58,27 @@ A Kinesis data stream is a set of shards. Each **shard** has a sequence of **dat
 
 Each shard has a _sequence_ of **data records**. A shard is a uniquely identified sequence of data records in a stream. A stream is composed of one or more shards, each of which has a **fixed unit of capacity**.
 
-. Each shard can support up to **5 transactions per second** for **reads**, up to a maximum total data read rate of **2 MB per second** and up to **1,000 records per second** for **writes**, up to a maximum total data write rate of **1 MB per second** (including partition keys).
+- Each shard can support up to **5 transactions per second** for **reads**, up to a maximum total data read rate of **2 MB per second**
+- Each shard can support up to **1,000 records per second** for **writes**, up to a maximum total data write rate of **1 MB per second** (including partition keys).
+- There is no upper limit on the # of shards you can have in a stream or account.
 
 The total capacity of the stream is the sum of the capacities of its shards.
 
 - **Merge cold shards** to make use of their unused capacity.
 - Merge the shards that receive **less data**
 
-#### Partition Key
+#### Additional Limits
+
+- There is no upper limit on the # of streams you can have in an account.
+- If you scaled to 5,000 shards, the stream can ingest 5 GiB per second or 5 million records per second.
+- Scale up the number of shards in  stream using the Console or UpdateShardCount API
+- The default shard limit is 500 shards for the following AWS Regions: US East (N. Virginia), US West (Oregon), and EU (Ireland). For all other Regions, the default shard limit is 200 shards.
+- The maximum size of the data payload of a record before base64-encoding is up to 1 MB.
+- GetRecords can retrieve up to 10 MiB of data per call from a single shard, and up to 10,000 records per call. Each call to GetRecords is counted as one read transaction.
+- Each shard can support up to five read transactions per second. Each read transaction can provide up to 10,000 records with an upper limit of 10 MiB per transaction.
+- You can register up to twenty consumers per stream to use enhanced fan-out.
+
+### Partition Key
 A **partition key** is used to **group data by shard** within a stream.
 
 Kinesis Data Streams segregates the **data records** belonging to a **stream** into **multiple shards**.
@@ -74,17 +87,17 @@ It uses the **partition key** that is associated with each data record to determ
 
 Partition keys are Unicode strings with a **maximum** length limit of **256 bytes**.
 
-#### Sequence Number
+### Sequence Number
 
 _TODO_...
 
-#### Retention Period
+### Retention Period
 The retention period is set at the stream level. The **retention period** is the length of time that data records are accessible after they are added to the stream.
 
 `Default retention period`: **24 hours** after creation
 You can increase the retention perioud up to **168 hours (7 days)**
 
-#### Data Records
+### Data Records
 A data record is the unit of data stored in a Kinesis data stream.
 
 Composed of:
@@ -121,6 +134,10 @@ The library provides connectors to various AWS services including S3.
 
 Each Amazon Kinesis connector application is a pipeline that understands how records from Kinesis Stream will be handled.
 
+KCL uses a unique Amazon DynamoDB table to keep track of the application's state
+
+KLC uses the name of the Kinesis Data Streams app to create the name of the table, each application name _must_ be unique
+
 ### Kinesis agent
 
 Kinesis Agent is a stand-alone Java application that can easily collect and send data to Kinesis Data Streams.
@@ -129,10 +146,10 @@ The agent can continuously monitor set of fles (more for log fles) and Aggregati
 
 #### Kinesis Data Analytics
 
-**Stagger Windows**: A query that aggregates data using keyed time-based windows that open as data arrives. The keys allow for multiple overlapping windows. This is the recommended way to aggregate data using time-based windows, because Stagger Windows reduce late or out-of-order data compared to Tumbling windows.
+**Stagger Windows**: A query that aggregates data using _keyed_ time-based windows that open as data arrives. The keys allow for multiple overlapping windows. This is the recommended way to aggregate data using time-based windows, because Stagger Windows reduce late or out-of-order data compared to Tumbling windows.
 
-**Tumbling Windows**: A query that aggregates data using distinct time-based windows that open and close at regular intervals.
+**Tumbling Windows**: A query that aggregates data using _distinct_ time-based windows that open and close at regular intervals.
 
-**Sliding Windows**: A query that aggregates data continuously, using a fixed time or rowcount interval.
+**Sliding Windows**: A query that aggregates data _continuously_, using a fixed time or rowcount interval.
 
 **Continuous Query**: query over a stream executes continuously over streaming data. Enables scenarios such as ability for applications to query the stream and generate alerts.

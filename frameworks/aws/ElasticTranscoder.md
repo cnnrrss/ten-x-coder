@@ -6,3 +6,7 @@ Amazon Elastic Transcoder lets you convert media fles that you have stored in Am
 - Enables a RESTful web service that uses HTTPS as the protocol and JSON as msg fmt
 - Allows app code to make requests directly to the Elastic Transcoder
 - You must write the necessary code to sign and authenticate your requests
+- Use pipelines to manage the conversion of videos into different formats
+- Transform videos into different formats using a single job and add new formats with simple changes
+- Pre-defined templates to convert videos into specific formats
+- Notify administrators apprised of the status of a job

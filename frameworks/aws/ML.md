@@ -16,7 +16,7 @@ Different types of logistic regression is implemented as Binary classification, 
 
 **Textract** - document text detection and analysis to your applications.
 
-Machine Learning web service offers _2 types of predictions_: 
+Machine Learning web service offers _2 types of predictions_:
 - **Batch Predictions**: asynchronously generate predictions for multiple input data observations
 - **Real-time Predictions**: synchronously generate predictions for individual data observations
 
@@ -39,12 +39,12 @@ ML models for multiclass classification problems allow you to generate predictio
 
 ### Regression Model
 
-ML models for regression problems predict a **numeric value**. 
+ML models for regression problems predict a **numeric value**.
 
 `Test`: Amazon ML uses the industry standard **Root Mean Square Error (RMSE)** metric.
 
 ### Hyperparameters / Overfitting
-In Amazon Machine Learning, there are four hyperparameters that you can set: 
+In Amazon Machine Learning, there are four hyperparameters that you can set:
 - number of passes
 - regularization
 - model size
@@ -53,3 +53,44 @@ In Amazon Machine Learning, there are four hyperparameters that you can set:
 Prevent overfitting the models by using cross validation techniques.
 
 **Overfitting** occurs when a model has memorized patterns that occur in the training and evaluation datasources, but has failed to generalize the patterns in the data.
+
+
+
+### Using MAchine Learning Talk
+
+Three diff layers:
+
+- AI Services
+    - Vision (Reko Image, Reko Video, Textract)
+    - Speech (Polly, Transcribe)
+    - Language (Translate, Comprehend)
+    - Chatbots (lex)
+    ...
+
+- ML Services
+Amazon SageMaker (Notebooks/Algorithms/Reinforcement Learning/Training/Optimization/Deployment)
+
+- Frameworks / Interfaces / Infra
+    - MxNet, PyTorch, TensorFlow
+    - Gluon, Keras
+    - EC2 (diff versions), Elastic Inference, Inferentia, Greengrass?
+
+What AWS offers? \
+**Media Analysis and Enrichment**
+- Content mod
+- Contextual ad insertion
+- Searchable media library
+- Custom facial reco
+- Multi-language metadata search
+
+**NFL Use Case**:
+- NFL gens 3TB of data each game week
+- Route recognition, Identifying key events
+
+**Formula One Use Case**:
+Solution: AWS Kinesis Streams data into S3 in real-time
+Rekognition, SageMaker, and Transcribe analyze race data
+Elemental MediaServices powers next gen video platform (asset tagging/management)
+
+
+Real-Time localization of video streams using translation closed caption (15% increase in minutes watched)

@@ -17,7 +17,7 @@
 
 ### Encryption at-rest
 
-- Two options: 
+- Two options:
     - Key Management Service (KMS)
     - Hardware Security Module (CloudHSM and On-Prem HSM)
 - When enabled, encryption of: data blocks, system metadata, and snapshots

@@ -58,7 +58,7 @@ A Kinesis data stream is a set of shards. Each **shard** has a sequence of **dat
 
 Each shard has a _sequence_ of **data records**. A shard is a uniquely identified sequence of data records in a stream. A stream is composed of one or more shards, each of which has a **fixed unit of capacity**.
 
-. Each shard can support up to **5 transactions per second** for **reads**, up to a maximum total data read rate of **2 MB per second** and up to **1,000 records per second** for **writes**, up to a maximum total data write rate of **1 MB per second** (including partition keys). 
+. Each shard can support up to **5 transactions per second** for **reads**, up to a maximum total data read rate of **2 MB per second** and up to **1,000 records per second** for **writes**, up to a maximum total data write rate of **1 MB per second** (including partition keys).
 
 The total capacity of the stream is the sum of the capacities of its shards.
 
@@ -68,7 +68,7 @@ The total capacity of the stream is the sum of the capacities of its shards.
 #### Partition Key
 A **partition key** is used to **group data by shard** within a stream.
 
-Kinesis Data Streams segregates the **data records** belonging to a **stream** into **multiple shards**. 
+Kinesis Data Streams segregates the **data records** belonging to a **stream** into **multiple shards**.
 
 It uses the **partition key** that is associated with each data record to determine **which shard** a given **data record** belongs to.
 
@@ -79,13 +79,13 @@ Partition keys are Unicode strings with a **maximum** length limit of **256 byte
 _TODO_...
 
 #### Retention Period
-The retention period is set at the stream level. The **retention period** is the length of time that data records are accessible after they are added to the stream. 
+The retention period is set at the stream level. The **retention period** is the length of time that data records are accessible after they are added to the stream.
 
 `Default retention period`: **24 hours** after creation
 You can increase the retention perioud up to **168 hours (7 days)**
 
 #### Data Records
-A data record is the unit of data stored in a Kinesis data stream. 
+A data record is the unit of data stored in a Kinesis data stream.
 
 Composed of:
 - Sequence number
@@ -113,17 +113,17 @@ Kinesis Data Streams uses **AWS KMS master keys** for encryption
 - Server-side encryption is always enabled on Kinesis Video Streams
 - Server-side encryption using KMS or CMK allows encrypting data at rest in Vid streams
 
-### Kinesis Connector Library 
+### Kinesis Connector Library
 
 Helps java developers integrate Kinesis Streams with other AWS services.
 
-The library provides connectors to various AWS services including S3. 
+The library provides connectors to various AWS services including S3.
 
 Each Amazon Kinesis connector application is a pipeline that understands how records from Kinesis Stream will be handled.
 
 ### Kinesis agent
 
-Kinesis Agent is a stand-alone Java application that can easily collect and send data to Kinesis Data Streams. 
+Kinesis Agent is a stand-alone Java application that can easily collect and send data to Kinesis Data Streams.
 
 The agent can continuously monitor set of fles (more for log fles) and Aggregation of data is not possible.
 
@@ -135,4 +135,4 @@ The agent can continuously monitor set of fles (more for log fles) and Aggregati
 
 **Sliding Windows**: A query that aggregates data continuously, using a fixed time or rowcount interval.
 
-**Continuous Query**: query over a stream executes continuously over streaming data. Enables scenarios such as ability for applications to query the stream and generate alerts. 
+**Continuous Query**: query over a stream executes continuously over streaming data. Enables scenarios such as ability for applications to query the stream and generate alerts.

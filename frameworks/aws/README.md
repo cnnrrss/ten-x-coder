@@ -2,7 +2,7 @@
 
 ## Compute
 
-**AWS EC2**: Raw compute, managed severs. Provides the virtual application servers, known as instances, to deploy your code on. 
+**AWS EC2**: Raw compute, managed severs. Provides the virtual application servers, known as instances, to deploy your code on.
 Tags: compute, devops
 
 **AWS ECR**: Elastic Container Registry - is a fully managed Docker container registry that makes it easy for developer to store, manage, and deploy Docker  container images.
@@ -44,7 +44,7 @@ Tags: compute, devops
 
 **[Redshift](Redshift.md)**: fast, fully managed, petabyte-scale data warehouse service that makes it simple and cost-effective to efficiently analyze all your data using your existing business intelligence tools. Optimized for datasets ranging from a few hundred GB - PB or more and costs < $1,000/TB/year. 1/10 the cost of most traditional data warehousing solutions.
 
-**QLDB**: Quantum Ledger DB - 
+**QLDB**: Quantum Ledger DB -
 
 **DocumentDB**: (w/ MongoDB compatibility) is a fast, reliable, and fully managed db service that makes it easy for you to set up, operate, and scale MongoDB-compatible dbs.
 
@@ -97,7 +97,7 @@ SQL, Query Types
     - CloudWatch Logs
         - Monitor, store, and access your log files from Amazon EC2 instances, AWS CloudTrail, or other sources.
 
-**CloutTrail**: monitor deployments in cloud w/ history of AWS APU calls for your account, including API calls made via AWS Management Console, SDK's, cmd line tools, and higher-level services. Identify which users and accounts, source IPs that called APIs for services that support CloudTrail. 
+**CloutTrail**: monitor deployments in cloud w/ history of AWS APU calls for your account, including API calls made via AWS Management Console, SDK's, cmd line tools, and higher-level services. Identify which users and accounts, source IPs that called APIs for services that support CloudTrail.
 
 
 

@@ -42,7 +42,7 @@ AWS IOT rule actions are used to specifiy what to do when a rule is triggered. Y
 - **Device Shadow service** - to provide persistent representations of your devices in the AWS Cloud. You can publish updated state information to a device's shadow, and your device can synchronize its state when it connects.
 - **Device Provisioning service** - Allows you to provision devices using a template that describes the resources required for your device: a thing, a certificate, and one or more policies.
 - **Custom Authentication service** - You can define custom authorizers that allow you to manage your own authentication and authorization strategy using a custom authentication service and a Lambda function.
-- **Jobs service** - Allows you to define a set of remote operations that are sent to and executed on one or more devices connected to AWS IoT. 
-- **Security and Identity service** - Provides shared responsibility for security in the AWS Cloud. 
-- **Registry** - Organizes the resources associated with each device in the AWS Cloud. 
+- **Jobs service** - Allows you to define a set of remote operations that are sent to and executed on one or more devices connected to AWS IoT.
+- **Security and Identity service** - Provides shared responsibility for security in the AWS Cloud.
+- **Registry** - Organizes the resources associated with each device in the AWS Cloud.
 - **Group registry** - Groups allow you to manage several devices at once by categorizing them into groups.

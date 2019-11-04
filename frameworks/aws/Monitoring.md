@@ -16,7 +16,7 @@ The **CloudWatch** alarm invokes **Application Auto Scaling** to evaluate your s
 
 - The **kinesis agent** publishes _custom_ **CloudWatch** metrics with a namespace "AWSKinesisAgent"
 
-- The **kinesis agent** publishes: 
+- The **kinesis agent** publishes:
     - Bytes sent
     - Number of records that returned failure
     - Number of calls to PutRecords that resulted in service error

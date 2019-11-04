@@ -6,7 +6,7 @@ KPL simplifes producer application development and also building batch of aggreg
 
 Validate the transaction by checking the successful insert into the stream by embedding **automatic** and **confgurable retry mechanism**
 
-Kinesis Streams provide capabilities to use **Future** objects to validate UserRecords. 
+Kinesis Streams provide capabilities to use **Future** objects to validate UserRecords.
 - No need to complicate the code by storing in memory/transient storage.
 
 **Time-to-live** records need to be increases if the UserRecords could not inserted into stream in time.
@@ -20,6 +20,6 @@ The transformation failures and delivery failures are loaded into **processing-f
 `KPL user record != Kinesis Data stream record`
 
 ### Improving of latency
-- **Batching of records**: refers to performing a single action on multiple items instead of repeatedly performing the action on each individual item. Supports two types of batching: 
+- **Batching of records**: refers to performing a single action on multiple items instead of repeatedly performing the action on each individual item. Supports two types of batching:
     - **Aggregation**: Storing multiple records within a single Kinesis Data Streams record
     - **Collection**: Using the API operation PutRecords to send multiple Kinesis Data Streams records to one or more shards in your Kinesis data stream.

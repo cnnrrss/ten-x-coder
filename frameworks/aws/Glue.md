@@ -8,4 +8,4 @@ AWS Glue acts as the ETL Engine and **Glue Data Catalog** acts as the central me
 
 A persistent metadata store. Managed servce that lets you store, annotate, and share metadata in the AWS Cloud in the same way you would in an Apache _Hive_ metastore.
 
-Provides a uniform repo where disparate systems can store and find metadata to keep track of data in silos. 
+Provides a uniform repo where disparate systems can store and find metadata to keep track of data in silos.

@@ -10,7 +10,7 @@ Use Athena to generate reports, explore data w/ BI tools, or SQL clients connect
 
 ### Data Formats
 
-Athena helps you analyze unstructured, semi-structured and structured data stored in S3. 
+Athena helps you analyze unstructured, semi-structured and structured data stored in S3.
 
 Examples:
 - CSV
@@ -21,8 +21,8 @@ Examples:
 
 - Athena **integrates** with **Amazon QuickSight** for easy data visualization.
 - Athena **does not** integrate with **Amazon RDS**.
-- Athena **integrates** with the **AWS Glue Data Catalog**, which ofers a **persistent metadata store** for your data in Amazon S3. 
-    - Allows you to create tables and query data in Athena 
+- Athena **integrates** with the **AWS Glue Data Catalog**, which ofers a **persistent metadata store** for your data in Amazon S3.
+    - Allows you to create tables and query data in Athena
     - Central metadata store available throughout your AWS account
     - Integrated with the ETL and data discovery features of AWS Glue.
 

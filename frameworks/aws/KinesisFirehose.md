@@ -1,6 +1,6 @@
 # Kinesis Firehose
 
-Kinesis Data Firehose is a **fully managed** service for delivering real-time streaming data to destinations such as S3, Redshift, ES, and Splunk. With Firehose you don't need to write apps or manage resources. 
+Kinesis Data Firehose is a **fully managed** service for delivering real-time streaming data to destinations such as S3, Redshift, ES, and Splunk. With Firehose you don't need to write apps or manage resources.
 
 Configure producers to send data to Firehose and it automatically delivers the data to the destination that you specified. Types of producers:
 - Kinesis data stream

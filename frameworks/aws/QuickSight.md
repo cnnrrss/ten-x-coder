@@ -6,7 +6,7 @@
 - If you choose a table and made changes to the fields (ex: changing field name), these changes are discarded when you add tables using the join interface
 
 
-## Data Sources 
+## Data Sources
 
 #### Relational Data Sources
 - Athena
@@ -34,7 +34,7 @@ Amazon **Redshift clusters**, Amazon **Athena databases**, and **Amazon Relation
 - JSON - Flat or semi-structured data files
 - XLSX - Microsoft Excel files
 
-Files in Amazon S3 that have been compressed with **zip**, or **gzip** (www.gzip.org), can be **imported as-is**. 
+Files in Amazon S3 that have been compressed with **zip**, or **gzip** (www.gzip.org), can be **imported as-is**.
 
 If you used another compression program for files in Amazon S3, or if the files are on your local network, you need to unzip them before importing them.
 
@@ -55,7 +55,7 @@ The process of transforming raw data for use in an analysis. Includes changes li
 
 ### SPICE
 
-SPICE is Quicksight's "_Super-fast, Parallel, In-memory Calculation Engine_". SPICE is engineered to quickly perform advanced calculations and serve data. 
+SPICE is Quicksight's "_Super-fast, Parallel, In-memory Calculation Engine_". SPICE is engineered to quickly perform advanced calculations and serve data.
 
 ### Data Analysis
 
@@ -83,7 +83,7 @@ In Enterprise edition, you can manage users through any of the following.
 
 **Tabular Reports** - customized table view of your data.
 
-**Heat Maps** - use to show a measure for the **intersection of two dimensions**, with color-coding to easily differentiate where values fall in the range. 
+**Heat Maps** - use to show a measure for the **intersection of two dimensions**, with color-coding to easily differentiate where values fall in the range.
 - Heat maps can also be used to show the count of values for the intersection of two dimensions.
 
 **Line Chart** - used to compare changes in measure values over a period of time for following scenarios:

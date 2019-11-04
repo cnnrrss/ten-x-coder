@@ -20,6 +20,6 @@ Can be monitored with CloudWatch.
 
 #### Enhanced Fan-Out
 
-This feature enables consumers to receive records from a stream with throughput of up to **2 MiB of data per second** per shard. 
+This feature enables consumers to receive records from a stream with throughput of up to **2 MiB of data per second** per shard.
 
 Throughput is **dedicated**, which means that consumers that use enhanced fan-out **don't have to contend with other consumers** that are receiving data from the stream.

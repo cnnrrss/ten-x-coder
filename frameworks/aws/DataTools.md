@@ -26,6 +26,6 @@ Convert your existing db schema from one db engine to another.
 
 You can convert OLTP schema, or data warehouse schema.
 
-You converted schema is suitable for RDS, MySQL DB, Aurora DB cluster, RDS PostgreSQL DB instance or a Redshift cluster. 
+You converted schema is suitable for RDS, MySQL DB, Aurora DB cluster, RDS PostgreSQL DB instance or a Redshift cluster.
 
 The converted schema can also be used w/ a db on an EC2 instance or stored as data on an S3 bucket.

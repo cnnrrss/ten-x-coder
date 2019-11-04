@@ -1,14 +1,14 @@
 # DynamoDB
 
 - Fully managed NoSql DB
-- Supports key-value or document data models. 
+- Supports key-value or document data models.
     - Enables flexible schema
 - No practical storage limits
     - 10 trillion requests per day
     - peaks > 20mil per second
     - petabytes of storage)
 - SSD
-- Fully resilient and highly available 
+- Fully resilient and highly available
     - Automated global replication across 3 regions
 - Performance scales - in a linear way
     - specify how many reads/writes you want per second
@@ -33,7 +33,7 @@ DynamoDB provides some flex in your per-partition throughput provisioning by pro
 - Auto scaling
 - Change tracking with triggers
 
-## Enterprise Grade 
+## Enterprise Grade
 
 - **ACID transactions** - native, server-side support for transations, simplifying the developer experience and enabling enterprise scale/perf benefits to broad set of mission-critical workloads.
 
@@ -44,7 +44,7 @@ DynamoDB provides some flex in your per-partition throughput provisioning by pro
 
 ### TTL
 
-- Background job checks the TTL attribute of _items_ to see if they are expired. 
+- Background job checks the TTL attribute of _items_ to see if they are expired.
 - If epoch time val stored in the attribute is less than current time, item is marked as _expired_ and subesquently deleted.
 - The processing of expiry and deletion takes place automatically in the backround and **does not** affect read or write traffic to the table.
 
@@ -63,7 +63,7 @@ Strongly Consistent (more cost)
 This enables DynamoDB to have a fexible schema, so each row can have any number of columns at any point in time.
 
 
-DynamoDB provides two read/write capacity modes for each table: **on-demand** and **provisioned**. 
+DynamoDB provides two read/write capacity modes for each table: **on-demand** and **provisioned**.
 
 For workloads that are less predictable for which you are unsure that you will have high utilization, on-demand capacity mode takes care of managing capacity for you, and you only pay for what you consume. Tables using provisioned capacity mode require you to set read and write capacity.
 
@@ -81,7 +81,7 @@ DynamoDB **global tables** replicate your data automatically across your choice 
 
 - The tables _must_ have the **same partition key** as all of the other replicas.
 - The tables _must_ have the **same write capacity** but **not read capacity**
-- The table **must** have **DynamoDB Streams enabled**, with the stream containing bot the new and old images of the item.
+- The table _must_ have **DynamoDB Streams enabled**, with the stream containing bot the new and old images of the item.
 - The **global secondary indexes** _must_ have the **same** **partition key** and **sort key**
 - The table and the **global secondary** names across all replicas must be the same.
 - None of the new or existing replica tables in the global table can contain any data.

@@ -4,7 +4,7 @@ Managed service that makes it easy to deploy, operate, and scale Elasticsearch c
 
 ### Encryption
 
-Amazon ES domains offer encryption at rest. The feature uses **AWS KMS** to store and manage your encryption keys. 
+Amazon ES domains offer encryption at rest. The feature uses **AWS KMS** to store and manage your encryption keys.
 
 Enables encryption of the following aspects:
 - Indices

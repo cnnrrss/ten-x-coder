@@ -7,7 +7,7 @@ SQL / NoSql \
 Load Balancing \
 HAProxy \
 Cache (Redis/memcached) \
-Vertical vs Horizontal scaling \ 
+Vertical vs Horizontal scaling \
 Rate Limiter
 
 Design Twitter \
@@ -34,7 +34,7 @@ So, we will need a data structure for this, e.g. hash table (ConcurrentHashMap i
 
 **Distributed rate limiter:**
 We should make hosts talk to each other and share how many tokens each one of them consumed so far.  \
-To implement communication between hosts we may use different approaches: 
+To implement communication between hosts we may use different approaches:
 - full mesh communication (everyone talks to everyone)
 - gossip communication
 - distributed cache

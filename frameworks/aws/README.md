@@ -31,7 +31,7 @@ Tags: compute, devops
 
 **S3**: Storage
 **S3 Glacier**:
-**EFS**: Elastic File Sercver
+**EFS**: Elastic File Server
 **AWS Backup**:
 **FSx**:
 

@@ -19,7 +19,7 @@ There are two types of system tables: STL and STV Tables
 
 System tables and views **do not** usethe same consistency model as regular tables.
 
-#### Ststem Tables
+#### System Tables
 **STL** - system tables are generated from Amazon Redshift log files to provide a history of the system.
 
 **STV** - STV tables are actually virtual system tables that contain snapshots of the current system data.

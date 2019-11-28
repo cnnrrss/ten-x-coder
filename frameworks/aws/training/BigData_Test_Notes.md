@@ -13,7 +13,7 @@ Categories:
 ## Analysis
 
 1.1) AWS Kinesis Video - Which of the below options that support
-collection, processing and playback of speci#c video clips on-demand? 
+collection, processing and playback of speci#c video clips on-demand?
 
 - Creation, processing are managed by Kinesis Video Streams while extraction of data
 from media sources is supported by Producer libraries
@@ -93,7 +93,7 @@ and fltered to diferent services based on SQL Queries against the data collected
 - IOT Rules address fltering and integration with the above services mentioned. (Best solution OOTB)
 
 
-## Storage 
+## Storage
 
 1.5) What is the best approach to consume all the data captured in the stream is shared with all the applications mentioned above which includes S3, Redshift and Elasticsearch (ES).
 - Create separate Kinesis Firehose for different downstream applications like S3, ES, and Redshift

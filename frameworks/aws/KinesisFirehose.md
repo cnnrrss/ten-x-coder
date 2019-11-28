@@ -1,6 +1,6 @@
 # Kinesis Firehose
 
-Kinesis Data Firehose is a **fully managed** service for delivering real-time streaming data to destinations such as **S3**, **Redshift**, **ES**, and **Splunk**. With Firehose you don't need to write apps or manage resources.
+Kinesis Data Firehose is a **fully managed** service for delivering _near_ real-time streaming data to destinations such as **S3**, **Redshift**, **Elasticsearch**, and **Splunk**. With Firehose you don't need to write apps or manage resources. Amazon Kinesis Data Firehose provides a simple way to capture, transform, and load streaming data with just a few clicks in the AWS Management Console.
 
 Configure producers to send data to Firehose and it automatically delivers the data to the destination that you specified. Types of producers:
 - Kinesis data stream
@@ -13,6 +13,14 @@ Other Producers...
 - AWS IOT
 
 You can also configure Firehose to transform data before delivery.
+
+### Delivery Limits
+Kinesis firehose data delivery frequency limits
+
+| |S3|ES|Splunk|
+|-|--|--|------|
+|**Buffer size**|1-128 MB|1-100 MB|5 MB|
+|**Buffer interval**|60-900 seconds|60-900 seconds|60 seconds|
 
 #### Lambda Blueprints
 

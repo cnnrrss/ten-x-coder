@@ -1,4 +1,4 @@
-# EMR 
+# EMR
 
 `EMR = Elastic Map Reduce`
 

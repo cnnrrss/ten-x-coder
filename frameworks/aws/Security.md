@@ -1,12 +1,10 @@
 # Security
 
-
 ### Redshift
 
 - Users _inbound_ access to an Amazon Redshift cluster can be managed through **security groups**
 
 - **Access Management** to Redshift cluster can be managed through **IAM**
-
 
 ### Encryption in-transit
 
@@ -25,14 +23,13 @@
     - You'll have to unload data and reload in a new cluster
 
 #### KMS
-
 Four-tier hierarchy of encryption keys:
     1) Master key
     2) Cluster encryption key
     3) Database encryption key
     4) Data Encryption keys
 
-#### HSM
+#### Cloud HSM
 Physical devices that safeguard and manage digital keys for strong authentication and provide cryptoprocessing.
 
 Contractual, regulatory requirements may determine if a HSM should be used.

@@ -27,7 +27,7 @@ EMR service provides various apps under Hadoop ecosystem for big data processing
 
 - **Phoenix**: OLTP (Online Transaction Processing) and operational analytics. Allowing you to use standard SQL queries and JDBC APIs to work with an Apache HBase backing store.
 
-- **TensorFlow**: an open-source symbolic math library for machine intelligence and deep learning applications. 
+- **TensorFlow**: an open-source symbolic math library for machine intelligence and deep learning applications.
 
 - **Tez**: a framework for creating a complex directed acyclic graph (DAG) of tasks for processing data. In some cases, it is used as an alternative to Hadoop MapReduce. For example, Pig and Hive workflows can run using Hadoop MapReduce or they can use Tez as an execution engine.
 
@@ -35,12 +35,14 @@ EMR service provides various apps under Hadoop ecosystem for big data processing
 
 - **ZooKeeper**: is a centralized service for maintaining configuration information, naming, providing distributed synchronization, and providing group services for replicated node orchestration.
 
-- **Sqoop**:  is a tool for transferring data between Amazon S3, Hadoop, HDFS, and RDBMS databases. 
+- **Sqoop**:  is a tool for transferring data between Amazon S3, Hadoop, HDFS, and RDBMS databases.
 
 - **Ganglia**: is a scalable, distributed system designed to monitor clusters and grids while minimizing the impact on their performance. When you enable Ganglia on your cluster, you can generate reports and view the performance of the cluster as a whole, as well as inspect the performance of individual node instances.
 
-- **Oozie**: Workflow Scheduler to manage and coordinate Hadoop jobs. 
+- **Oozie**: Workflow Scheduler to manage and coordinate Hadoop jobs.
 
-- **Livy**
-- **Mahout**
-- **MXNet** 
+- **Livy**: Livy enables interaction over a REST interface with an EMR cluster running Spark. You can use the REST interface or an RPC client library to submit Spark jobs or snippets of Spark code, retrieve results synchronously or asynchronously, and manage Spark Context.
+
+- **Mahout**: Amazon EMR supports Apache Mahout, a machine learning framework for Apache Hadoop.
+
+- **MXNet**: Apache MXNet is an acceleration library designed for building neural networks and other deep learning applications.

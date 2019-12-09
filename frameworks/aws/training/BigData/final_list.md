@@ -31,7 +31,8 @@ Last minute review
 - [x] Binary Classification AUC score (.51 is like taking a guess, 1 is good)
 - [x] Kinesis Data Streams uses unique DynamoDB table to keep track of state. KCL ProvisionedThroughput errors means u need to increase DynamoDB throughput
 - [] DynamoDB to Redshift (ensure empty values handled, ensure data types matches b/w engines)
-
+- [] ML (Source from Redshift or S3)
+- [] bzip2 supports splitting files
 ### Must Know
 - [x] RCU / WCU DynamoDB (1sc/2ec) 4 KB RCU; 1 KB WCU;
 - [] ML Algorithms / Amazon ML data sources
@@ -50,4 +51,3 @@ Last minute review
 - [] DynamoDB (Global secondary, sparse indexes, bust/adaptive, replication, etc)
 - [x] Merge cold shards to make use of unused capacity. Split hot shards to free up resources for keys that target those shards
 - [] IoT Policy Actions
-

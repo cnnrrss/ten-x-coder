@@ -22,6 +22,9 @@ Specify:
 
 Can inherift properties from parent components.
 
+### Instances
+When AWS Data Pipeline runs a pipeline, it compiles the pipeline components to create a set of **actionable instances**.
+
 ### Task Runners
 
 A task runner is an application that polls AWS Data Pipeline for tasks and then performs those tasks.
@@ -31,6 +34,13 @@ Two ways to use Task Runner to process pipeline:
 - AWS Data Pipeline installs Task Runner for you on resources that are launched and managed by the AWS Data Pipeline web service.
 - You install Task Runner on a computational resource that you manage, such as a long-running EC2 instance, or an on-premises server.
 
+### Attempts
+
+To provide robust data management, AWS Data Pipeline retries a failed operation.
+
+It continues to do so until the task reaches the maximum number of allowed retry attempts. 
+
+Attempt objects track the various attempts, results, and failure reasons if applicable.
 
 ### Data Nodes
 
@@ -48,8 +58,8 @@ A Data Node defines the location and type of data that a pipeline activity uses 
 
 AWS Data Pipeline supports the following db types:
 
-**JdbcDatabase**
+**JdbcDatabase**: A JDBC database.
 
-**RdsDatabase**
+**RdsDatabase**: An Amazon RDS database.
 
-**RedshiftDatabase**
+**RedshiftDatabase**: An Amazon Redshift database.

@@ -50,5 +50,14 @@ EMR supports 2 types of encryption:
 - LUKS encryption
 - SSE-KMS
 
+- AWS KMS Customer Master Keys (CMKs) for EMRFS Encryption
+- S3 client-side encryption with custom materials provider
+
+
+**S3**: server-side or client-side encryption
+- SSE-S3, SSE-KMS, CSE-KMS, or CSE-custom
+
+**Note**: S3 server-side encryption with KMS (SSE-KMS) is not available when using EMR version <= 4.4
+
 ### Apache Open Source
 [Apache](./Apache.md#Apache)

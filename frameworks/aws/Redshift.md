@@ -9,6 +9,13 @@ size from gigabytes to exabytes. Redshift uses columnar storage, data compressio
 
 Amazon Redshift uses machine learning to deliver high throughout based on your workloads. Redshift utilizes sophisticated algorithms to predict incoming query run times, and assigns them to the optimal queue for the fastest processing.
 
+### Redshift Security
+
+- Groups are collections of users that can be assigned privileges for easier security maintenance.
+- By default, privileges are granted only to the object owner.
+- Redshift db users are named user accounts that can connect to a database. A user account is granted privileges explicitly, by having those privileges assigned directly to the account, or implicitly, by being a member of a group that is granted privileges.
+- _Schemas_ are collections of db tables and other db objects. Schemas are similar to operating system directories, except that schemas cannot be nested.
+
 ### System Tables and Views
 
 Amazon Redshift has many **system tables** and **views** that contain information about how the system is functioning.
@@ -33,6 +40,8 @@ System tables and views **do not** usethe same consistency model as regular tabl
 
 `https://docs.aws.amazon.com/redshift/latest/dg/c_intro_STL_tables.html`
 
+The system catalogs store schema metadata, such as information about tables and columns. System catalog tables have a PG prefix.
+
 ### Data Sources
 
 You can load data from text files in an Amazon S3 bucket, in an Amazon EMR cluster, or on a remote host that your cluster can access using an SSH connection. You can also load data directly from a DynamoDB table.
@@ -40,7 +49,6 @@ You can load data from text files in an Amazon S3 bucket, in an Amazon EMR clust
 The maximum size of a single input row from any source is 4 MB.
 
 To export data from a table to a set of files in an Amazon S3, use the UNLOAD command.
-
 
 ### Recommendations
 
@@ -71,7 +79,6 @@ To export data from a table to a set of files in an Amazon S3, use the UNLOAD co
 - In the sequence, each table should be identical but contain data for different time ranges
 - Use `DROP TABLE` instead of running a large-scale `DELETE` and a subsequent `VACUUM` process to reclaim space.
 
-
 ### Tuning
 
 You should assign distribution styles to achieve two goals:
@@ -96,6 +103,8 @@ A **copy** of the **entire table** is distributed to **every node**. Where EVEN 
 **EVEN distribution**
 
 The rows are **distributed** across the slices in a **round-robin** fasion, regardless of the values in any particular column. EVEN distribution is **appropriate when a table does not participate in joins** OR **when there is not a clear choice between KEY and ALL**. EVEN distribution is the **default style** of distribution.
+
+**AUTO**: when you don't know the workload, it is better to go with no distribution style.
 
 ### Sort Keys
 
@@ -140,3 +149,11 @@ where salesid in (select listid from listing where listtime > '2008-12-26');
 - **Upsert** - Redshift **doesn't** support a single merge statement to insert and update data from a single data source.
 
 - **Utilize staging table first** - Efficiently update and insert new data by loading your data into a stagign table first.
+
+### External Schemas
+
+Redshift external schema references _external databases_ in an _external data catalog_.
+
+You can create the external database in Amazon Redshift, Amazon Athena, or in an Apache Hive metastore such as Amazon EMR.
+
+For external schemas, Redshift needs auth to access the data catalog in Athena and the files in S3 using IAM Roles and policies.

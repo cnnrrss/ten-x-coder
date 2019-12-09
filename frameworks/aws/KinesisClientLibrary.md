@@ -1,5 +1,7 @@
 ## KCL - Kinesis Client Library
 
+**Note**: You wouldn't use KCL with Lambda. It would be implemented within a daemon or long running consumer application.
+
 The KCL performs the following tasks:
 
 - Connects to the stream

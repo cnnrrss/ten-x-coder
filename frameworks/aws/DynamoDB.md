@@ -20,6 +20,7 @@
 - Use **Global Tables**, a fully managed solution across multiple regions, multi-master databases
 
 
+
 ## Basics
 
 - **Item** is a row in DynamoDB
@@ -31,6 +32,12 @@
     - **Set Types**: String Set, Number Set, Binary Set
 
 NOTE: Rows can have different elements, and different number of elements. No Schema at the table level
+
+#### Serverless
+- Read/write capacity modes
+- On-demand mode
+- Auto scaling
+- Change tracking with triggers
 
 ### Write capacity Units
 - One write capacity unit represents one write per second for an item up to **1 KB** in size.
@@ -48,7 +55,7 @@ NOTE: Rows can have different elements, and different number of elements. No Sch
 ```
 
 ### Read Capacity Units
-- One read capacity unit represents _one strongly consistent read_ per second, or _two eventually consistent read_ per second, for an item up to 4 KB.
+- One read capacity unit represents ***one strongly consistent read per second***, or ***two eventually consistent read*** per second, for an item up to 4 KB.
 - If the items are larger than **4KB**, more RCU are consumed
 
 ```bash
@@ -64,7 +71,7 @@ NOTE: Rows can have different elements, and different number of elements. No Sch
 
 ### DynamoDB - Throttling
 - If we exceed our RCU or WCU, we get
-ProvisionedThroughputExceededExceptions
+`ProvisionedThroughputExceededExceptions`
 - Reasons:
     - Hot keys / partitions: one partition key is being read too many times (popular item for ex)
 - Very large items: remember RCU and WCU depends on size of items
@@ -80,21 +87,15 @@ ProvisionedThroughputExceededExceptions
     - Up to 400 KB of data per item
 
 #### Burst Capacity
-DynamoDB provides some flex in your per-partition throughput provisioning by providing burst capacity. DynamoDB reserves a portion of that unused capacity for later burssts of throughput to handle usage spikes.
+DynamoDB provides some flex in your per-partition throughput provisioning by providing burst capacity. DynamoDB _reserves a portion_ of that _unused capacity_ for later bursts of throughput to handle usage spikes.
 
-DynamoDB currently retains up to 5 minutes (300 seconds) of unused read and write capacity. During an occasional burst of read or write activity, these extra capacity units can be consumed quickly—even faster than the per-second provisioned throughput capacity that you've defined for your table.
+DynamoDB currently retains up to **5 minutes** (300 seconds) of unused read and write capacity. During an occasional burst of read or write activity, these extra capacity units can be consumed quickly—even faster than the per-second provisioned throughput capacity that you've defined for your table.
 
 #### Adaptive Capacity
 
-Adaptive capacity is a feature that enables DynamoDB to run imbalanced workloads indefinitely. It minimizes throttling due to throughput exceptions. It also helps you reduce costs by enabling you to provision only the throughput capacity that you need.
+Adaptive capacity is a feature that enables DynamoDB to run **imbalanced workloads** indefinitely. It minimizes throttling due to throughput exceptions. It also helps you reduce costs by enabling you to provision only the throughput capacity that you need.
 
 enables your application to continue reading and writing to hot partitions without being throttled. Provided that traffic does not exceed your tables total provisioned capacity or the partition maximum capacity. 
-
-## Serverless
-- Read/write capacity modes
-- On-demand mode
-- Auto scaling
-- Change tracking with triggers
 
 ## Enterprise Grade
 
@@ -108,9 +109,9 @@ enables your application to continue reading and writing to hot partitions witho
 
 ### TTL
 
-- Background job checks the TTL attribute of _items_ to see if they are expired.
-- If epoch time val stored in the attribute is less than current time, item is marked as _expired_ and subesquently deleted.
-- The processing of expiry and deletion takes place automatically in the backround and **does not** affect read or write traffic to the table.
+- **Background job checks the TTL** attribute of _items_ to see if they are expired.
+- If **epoch time** val stored in the attribute is less than current time, item is marked as ***expired*** and subesquently deleted.
+- The processing of expiry and deletion takes place automatically in the **backround** and **does not affect read or write** traffic to the table.
 
 ### Tables
 
@@ -120,24 +121,27 @@ Its on tables that you specify the performance requirements
 
 - Write Capacity Units - Number of 1KB blocks / second
 - Read Capacity Units - Number of 4KB blocks / second
-
-Eventually Consistent Reads ( Default )
-Strongly Consistent (more cost)
+    - Eventually Consistent Reads ( Default 2 / sec)
+    - Strongly Consistent (more cost 1 / sec)
 
 This enables DynamoDB to have a fexible schema, so each row can have any number of columns at any point in time.
 
 
 DynamoDB provides two read/write capacity modes for each table: **on-demand** and **provisioned**.
 
-For workloads that are less predictable for which you are unsure that you will have high utilization, on-demand capacity mode takes care of managing capacity for you, and you only pay for what you consume. Tables using provisioned capacity mode require you to set read and write capacity.
+For workloads that are less predictable for which you are unsure that you will have high utilization: 
+
+**On-demand capacity** mode takes care of managing capacity for you, and you only pay for what you consume.
+
+Tables using **provisioned capacity** mode require you to set read and write capacity.
 
 ### Partitions
 
-Each partition:
+_Each partition_:
 
-- Max of 3000 RCU
-- Max of 1000 WCU
-- Max of 10GB
+- Max of **3000 RCU**
+- Max of **1000 WCU**
+- Max of **10GB**
 
 Compute # of partitions
 
@@ -159,9 +163,9 @@ Table settings: Total 6000 RCU / Total 2400 WCU / 3 Partitions
 
 ### Auto-Scaling
 
-Metrics are published to **CloudWatch**
+**Metrics** are published to **CloudWatch**
 
-If the table's consumed capacity exceeds your target utilization (or falls below the target) for a specifc length of time, Amazon CloudWatch triggers an alarm using **SNS**.
+If the table's consumed capacity **exceeds** your **target utilization** (or falls below the target) for a specifc length of time, Amazon CloudWatch triggers an alarm using **SNS**.
 
 The CloudWatch alarm invokes **Application Auto Scaling** to evaluate your scaling policy using SNS which issues an UpdateTable request to adjust your table's provisioned throughput.
 

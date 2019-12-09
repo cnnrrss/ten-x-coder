@@ -48,11 +48,11 @@ A Kinesis data stream is a set of shards. Each **shard** has a sequence of **dat
 
 **Data Streams API** -  Data Streams API can be consumer to the Data Stream but cannot deaggregate the data.
 
-- Future Objects: Kinesis Streams provide capabilities to use Future objects to validate UserRecords. No need to complicate code by storing memory/transient storage. Examine failures using the Future objects that are returned from addUserRecord method.
+- **Future Objects**: Kinesis Streams provide capabilities to use Future objects to validate UserRecords. No need to complicate code by storing memory/transient storage. Examine failures using the Future objects that are returned from addUserRecord method.
 
-- Automatic and configurable retry mechanism
+- Automatic and configurable **retry mechanism**
 
-- Time-to-live: on records if records could not be inserted after RecordMaxBufferedTime, time to-live can be extended if UserRecords could not be inserted into stream in time.
+- **Time-to-live (TTL)**: on records if records could not be inserted after RecordMaxBufferedTime, time to-live can be extended if UserRecords could not be inserted into stream in time.
 
 #### Shards
 
@@ -74,14 +74,14 @@ The total capacity of the stream is the sum of the capacities of its shards.
 
 #### Additional Limits
 
-- There is no upper limit on the # of streams you can have in an account.
+- There is **no upper limit on the # of streams** you can have in an account.
 - If you scaled to 5,000 shards, the stream can ingest 5 GiB per second or 5 million records per second.
 - Scale up the number of shards in  stream using the Console or UpdateShardCount API
 - The default shard limit is 500 shards for the following AWS Regions: US East (N. Virginia), US West (Oregon), and EU (Ireland). For all other Regions, the default shard limit is 200 shards.
-- The maximum size of the data payload of a record before base64-encoding is up to 1 MB.
-- GetRecords can retrieve up to 10 MiB of data per call from a single shard, and up to 10,000 records per call. Each call to GetRecords is counted as one read transaction.
-- Each shard can support up to five read transactions per second. Each read transaction can provide up to 10,000 records with an upper limit of 10 MiB per transaction.
-- You can register up to twenty consumers per stream to use enhanced fan-out.
+- The maximum size of the data payload of a record before base64-encoding is up to **1 MB**.
+- **GetRecords** can retrieve up to **10 MiB** of data per call from a single shard, and up to 10,000 records per call. Each call to GetRecords is counted as one read transaction.
+- **Each shard** can support up to **five read transactions per second**. Each read transaction can provide up to 10,000 records with an upper limit of 10 MiB per transaction.
+- You can register up to **twenty** consumers per stream to use **enhanced fan-out**.
 
 ### Partition Key
 A **partition key** is used to **group data by shard** within a stream.
@@ -110,7 +110,7 @@ Composed of:
 - Partition key
 - Data blob (immutable sequence of bytes)
     - KDS does not inspect/interpret/modify the data blob
-    - Can be up to 1 MB
+    - Can be up to **1 MB**
 
 #### Server-side Encryption
 
@@ -151,7 +151,7 @@ The library provides connectors to various AWS services including S3.
 
 Each Amazon Kinesis connector application is a pipeline that understands how records from Kinesis Stream will be handled.
 
-KCL uses a unique Amazon DynamoDB table to keep track of the application's state
+KCL **uses** a unique **Amazon DynamoDB** table to keep track of the application's **state**
 
 KLC uses the name of the Kinesis Data Streams app to create the name of the table, each application name _must_ be unique
 
@@ -166,10 +166,22 @@ The agent can continuously monitor set of fles (more for log fles) and Aggregati
 `RANDOM_CUT_FOREST`
 - SQL function used for anomaly detection on numeric columns in a stream
 
-**Stagger Windows**: A query that aggregates data using _keyed_ time-based windows that open as data arrives. The keys allow for multiple overlapping windows. This is the recommended way to aggregate data using time-based windows, because Stagger Windows reduce late or out-of-order data compared to Tumbling windows.
+##### Stagger Windows: 
 
-**Tumbling Windows**: A query that aggregates data using _distinct_ time-based windows that open and close at regular intervals.
+A query that aggregates data using ***keyed*** time-based windows that open as data arrives. 
 
-**Sliding Windows**: A query that aggregates data _continuously_, using a fixed time or rowcount interval.
+The keys allow for multiple overlapping windows. 
 
-**Continuous Query**: query over a stream executes continuously over streaming data. Enables scenarios such as ability for applications to query the stream and generate alerts.
+This is the recommended way to aggregate data using time-based windows, because Stagger Windows reduce late or out-of-order data compared to Tumbling windows.
+
+##### Tumbling Windows: 
+
+A query that aggregates data using ***distinct*** time-based windows that open and close at **regular intervals**.
+
+##### Sliding Windows: 
+
+A query that aggregates data _continuously_, using a **fixed time** or **rowcount interval**.
+
+##### Continuous Query: 
+
+Query over a stream executes continuously over streaming data. Enables scenarios such as ability for applications to query the stream and generate alerts.

@@ -20,7 +20,7 @@ Discover your store associated metadata in the Glue Data Catalog
 
 ### ETL
 
-Schedule ETL jobs to transform and load the data
+Schedule **ETL jobs** to transform and load the data
 
 ### CloudWatch
 

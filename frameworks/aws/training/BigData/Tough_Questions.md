@@ -78,9 +78,9 @@ Log Files -> Apache ORC, How?
 
 ### KCL
 What kind of monitoring is enabled by the KCL library?
-- Per-KCL-Application Metrics, aggregated across all KCL workers w/in scope of the app
-- Per-Worker Metrics, aggregated across all record processors consuming data
-- Per-Shard Metrics, aggregated across a single record processor
+- **Per-KCL-Application Metrics**, aggregated across all KCL workers w/in scope of the app
+- **Per-Worker Metrics**, aggregated across all record processors consuming data
+- **Per-Shard Metrics**, aggregated across a single record processor
 
 ### Kinesis Data Analytics
 What kind of downstream apps are supported?
@@ -102,9 +102,9 @@ What kind of permissions are needed?
 - Permissions for encrypted metadata in Glue Data Catalog
 
 Encryption for data in S3 and results:
-- SSE with SSE-S3 for encrypted datasets in S3 and results
-- SSE with (SSE-KMS) for encrypted datasets in S3 and results
-- CSE with (CSE-KMS) for encrypted datasets in S3 and results
+- SSE with **SSE-S3** for encrypted datasets in S3 and results
+- SSE with (**SSE-KMS**) for encrypted datasets in S3 and results
+- CSE with (**CSE-KMS)** for encrypted datasets in S3 and results
 
 ## Redshift
 Best practices for improving queries:
@@ -162,7 +162,7 @@ Upsert data?
 ## DynamoDB
 
 Facts:
-- Maximum size of item 400KB
+- Maximum **size** of item **400KB**
 - Data types supported:
     - Scalar Types: (string, number, binary, boolean, null)
     - Document Types: List, Map
@@ -221,10 +221,10 @@ Two Types of Capacity
 - **Adaptive Capacity**: enables your application to continue reading and writing to _hot_ partitions without being throttled
 
 ## Query Types
-Stagger Windows - _keyed_ time-based windows (ex: capture aggregate every _15 mins_) (can be overlapping)
-Tumbling Windows - _disctinct_ time-based windows (non overlapping)
-Sliding windows - _continuously_ using a _fixed time_ or _rowcount_ interval
-Continuous - query _over_ stream executes _continuously_, enables scenarios such as ability to continuously query and generate alerts (Ex: alert if throughput latency is above defined max threshold)
+**Stagger Windows** - _keyed_ time-based windows (ex: capture aggregate every _15 mins_) (can be overlapping)
+**Tumbling Windows** - _disctinct_ time-based windows (non overlapping)
+**Sliding windows** - _continuously_ using a _fixed time_ or _rowcount_ interval
+**Continuous** - query _over_ stream executes _continuously_, enables scenarios such as ability to continuously query and generate alerts (Ex: alert if throughput latency is above defined max threshold)
 
 ## ML
 Ml creating data schemas, what are the sources
@@ -232,16 +232,16 @@ Ml creating data schemas, what are the sources
 - Metadata of files in S3, tables, views and collections in dbs are the data sources
 - AttributeType includes Binary, Categorical, Numeric and Text datatypes
 
-How much revenue can be generated for each team?
+**Question**: How much revenue can be generated for each team?
 - Linear regression algo, regression model
 - RMSE metric to provide accuracy to the model
 
-Recommend new products based on customer interests?
+**Question**: Recommend new products based on customer interests?
 - Multi-nominal logistic regresssion algo
 - Cross-validation technique to train
 - Macro-average F1 score to provide accuracy
 
-Reviews by customers or bots?
+**Question**: Reviews by customers or bots?
 - Binary classification
 - Area Under the Curve (AUC) provide accuracy
 - Cross Validation

@@ -20,6 +20,12 @@ Machine Learning web service offers _2 types of predictions_:
 - **Batch Predictions**: asynchronously generate predictions for multiple input data observations
 - **Real-time Predictions**: synchronously generate predictions for individual data observations
 
+|Algorithm|Classification|Accuracy|Usage|
+|---------|--------------|--------|-----|
+|Logistic Regression|Binary|Area under the curve (AUC)|"Is this email spam or not spam?" <br> "Will the customer buy this product?" <br> "Is this product a book or a farm animal?" |
+|Multi-nominal logistic regression|Multi-class|Macro-average F1 score|"Is this product a book, movie, or clothing?" <br> "Is this movie a romantic comedy, documentary, or thriller?" <br> "Which category of products is most interesting to this customer?"|
+|Linear Regression|Regression Model|Standard root mean square error (RMSE)|"What will the temperature be in Seattle tomorrow?" <br> "For this product, how many units will sell?" <br> "What price will this house sell for?"|
+
 ### Binary Classification Model
 
 `Ex: Will customer buy this product? -> Yes / No` \

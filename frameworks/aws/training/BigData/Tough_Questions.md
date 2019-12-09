@@ -1,5 +1,11 @@
 # Cheat Sheet
 
+
+## Facts
+
+**VPC Endpoint Gateways**: only DynamoDB & S3 have them. The rest of the services are VPC Endpoint _Interfaces_
+**Redshift Spectrum cross account accesss to S3**: Add poolicy to S3 bucket with GET and LIST ops for an IAM role for the Spectrum account
+
 ## S3
 Cross-account Redshift Spectrum access to an S3 bucket:
     - Add a policy to the S3 bucket allowing S3 `GET` and `LIST` operations for an IAM role for Spectrum on the Redshift account
@@ -353,5 +359,4 @@ LEAST overhead that fulfills requirements: DB with archiving/expiring, Search, S
 - Storage = S3
 
 ## VPC Endpoints
-
 DynamoDB & S3 are the only technologies that have VPC Endpoint Gateways, the rest are VPC Endpoint Interfaces.

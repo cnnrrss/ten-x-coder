@@ -5,7 +5,6 @@
 - QuickSight allows configure join type (inner, outer, left, right)
 - If you choose a table and made changes to the fields (ex: changing field name), these changes are discarded when you add tables using the join interface
 
-
 ## Data Sources
 
 #### Relational Data Sources
@@ -69,7 +68,13 @@ Dashboards let users view and filter the dashboard visuals without changing the 
 
 ### Security
 
-Restrict access to a data set using [row level security](https://docs.aws.amazon.com/quicksight/latest/user/restrict-access-to-a-data-set-using-row-level-security.html)
+Restrict access to a data set using [row level security](https://docs.aws.amazon.com/quicksight/latest/user/restrict-access-to-a-data-set-using-row-level-security.html). This can be done before or after the dataset is shared. Only the people you shared with can see the data. By adding row-level security you can further control their access.
+
+**Steps to Row level security**
+- Create data set rules for Rls (grant access, or deny access)
+- Apply row-level permissions by using a file or query that contains the data set rules
+- Choose your permissions data set, and assign policies to users and groups.
+- To apply the data set rules, add the permissions data set to the data set.
 
 #### Managing Users
 
@@ -92,3 +97,5 @@ In Enterprise edition, you can manage users through any of the following.
 - One measure for a dimension over a period of time (# of flight delays per day by airline)
 
 **Tree Maps** - used to visualize one or two measures for a dimension
+
+**KPI** - key metrics / goals

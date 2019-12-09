@@ -102,7 +102,7 @@ Rules of Thumb:
 **Monitor**
 **Read-Write Lock**
 **Semaphore**
-i
+
 #### Concurrency Patterns
 **N-Barrier**
 **Bounded Parallelism**
@@ -112,7 +112,7 @@ i
 **Reactor**
 **Parallelism**
 **Producer / Consumer**
-i
+
 ### Messaging Patterns (algorithms?)
 **Fan-In**
 Funnels tasks to a work sink (e.g. server)

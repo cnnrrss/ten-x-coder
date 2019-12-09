@@ -67,6 +67,11 @@ The total capacity of the stream is the sum of the capacities of its shards.
 - **Merge cold shards** to make use of their unused capacity.
 - Merge the shards that receive **less data**
 
+#### Kinesis Data Streams Metrics / Monitoring
+- The metrics that you configure for your streams are automatically collected and pushed to CloudWatch **every minute**.
+- Metrics are archived for **two weeks**; after that period, the data is discarded.
+- Shard-level data is sent **every minute** for an **additional cost**.
+
 #### Additional Limits
 
 - There is no upper limit on the # of streams you can have in an account.
@@ -116,6 +121,11 @@ Kinesis Data Streams uses **AWS KMS master keys** for encryption
 
 ### Kinesis Video Streams
 
+- Creation, processing are managed by Kinesis Video Streams
+- Extraction of data from media sources is supported by _Producer_ libraries.
+- HTTP Live Streaming (HLS) or GetMedia API supports viewing an Amazon Kinesis video stream, either for live playback or to view archived video.
+
+
 - Video streams stores incoming media data as **chunks**
 - Each **chunk** consists of:
     - media metadata
@@ -125,6 +135,13 @@ Kinesis Data Streams uses **AWS KMS master keys** for encryption
 
 - Server-side encryption is always enabled on Kinesis Video Streams
 - Server-side encryption using KMS or CMK allows encrypting data at rest in Vid streams
+
+#### Kinseis Video Streams API
+- Producer API:
+    - `PutMedia` to write media data to a video stream
+    - A fragment is a self-contained sequence of frames.
+- Consumer API:
+    - `GetMedia`, `GetMediaFromFragmentList`, `ListFragments`
 
 ### Kinesis Connector Library
 
@@ -145,6 +162,9 @@ Kinesis Agent is a stand-alone Java application that can easily collect and send
 The agent can continuously monitor set of fles (more for log fles) and Aggregation of data is not possible.
 
 #### Kinesis Data Analytics
+
+`RANDOM_CUT_FOREST`
+- SQL function used for anomaly detection on numeric columns in a stream
 
 **Stagger Windows**: A query that aggregates data using _keyed_ time-based windows that open as data arrives. The keys allow for multiple overlapping windows. This is the recommended way to aggregate data using time-based windows, because Stagger Windows reduce late or out-of-order data compared to Tumbling windows.
 

@@ -32,9 +32,9 @@ Video Streams console
 - Amazon S3 to provide layered storage for both active/inactive/archive layers of data
 
 1.10) SQL against streaming source using Kinesis Analytics. What kind of use cases can be realized?
-- Metrics over time windows, thereby stream data to Amazon S3 or Amazon Redshift through Kinesis stream 
+- Metrics over time windows, thereby stream data to Amazon S3 or Amazon Redshift through Kinesis stream
 - Aggregate and Process streaming data results to feed real-time dashboards
-- Enable Custom Metrics and supports real-time monitoring, noti!cations, and alarms
+- Enable Custom Metrics and supports real-time monitoring, notifications, and alarms
 
 1.16) To reduce time to insight, optimize costs, and increase %exibility for its analysis, which tool can provide interactive querying capability for the datasets available in CSV, JSON, or columnar data formats such as Apache Parquet and Apache ORC OOTB with S3?
 - Athena helps you analyze unstructured, semi-structured, and structured data stored in Amazon S3 and allow run ad-hoc queries using ANSI SQL, without the need to aggregate or load the data into Athena.
@@ -61,7 +61,7 @@ processing
 support full workloads
 
 1.7) There are 2 consumers that are using enhanced fan-out to receive data from the stream. Please detail the implementation speci#cs of
-consumers. 
+consumers.
 - An enhanced fan-out pipe provides up to 2 MiB/sec of data per shard
 - Consumers can be built out KCL library or API
 - KCL automatically subscribes to consumer to all the shards of the stream
@@ -114,7 +114,7 @@ related queries. ORDER_FCT has many other dimensions to support analysis.
 1.6) The team is planning to use a Chart to visualize a comparison between a key value and its target value:
 - KPI's
 
-1.11) Team wanted to build some charts on a single dimension, grouped dimensions against a single measure and multiple measures and their aggregations and summaries based on X and Y dimensions. 
+1.11) Team wanted to build some charts on a single dimension, grouped dimensions against a single measure and multiple measures and their aggregations and summaries based on X and Y dimensions.
 - Bar Charts
 - Combo Charts
 

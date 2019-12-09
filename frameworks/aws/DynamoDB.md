@@ -17,15 +17,78 @@
     - In-mem cache
 - Real-time data processing with DynamoDB Streams
     - time-ordered sequence of item-level modifications, up to 24 hours
+- Use **Global Tables**, a fully managed solution across multiple regions, multi-master databases
 
-Row == Item in DynamoDB
 
-Rows can have different elements, and different number of elements. No Schema at the table level
+## Basics
+
+- **Item** is a row in DynamoDB
+- **Attribute** is a column in DynamoDB
+- Max size of item is **400KB**
+- Data types supported are:
+    - **Scalar Types**: String, Number, Binary, Boolean, Null
+    - **Document Types**: List, Map
+    - **Set Types**: String Set, Number Set, Binary Set
+
+NOTE: Rows can have different elements, and different number of elements. No Schema at the table level
+
+### Write capacity Units
+- One write capacity unit represents one write per second for an item up to **1 KB** in size.
+- If the items are _larger than 1 KB, more WCU are consumed_
+
+```bash
+# Example 1: 10 objects per second of 2KB each
+10 objs * (2KB obj size / 1KB limit) = 20 WCU
+
+# Example 2: 6 objs per second | 4.5 KB each
+6 objs * (4.5 / 1KB) = 30 WCU. # Note: calculated to the nearest whole, so round up
+
+#Example 4: 120 objs per minute of 2 KB each
+120 objs per min / 60 seconds = 2 objs per sec; 2 objs * ( 2KB / 1KB limit) = 4 WCU
+```
+
+### Read Capacity Units
+- One read capacity unit represents _one strongly consistent read_ per second, or _two eventually consistent read_ per second, for an item up to 4 KB.
+- If the items are larger than **4KB**, more RCU are consumed
+
+```bash
+# Example 1: 10 strong cons. reads per sec of 4 KBs each
+10 * 4 KB / 4 KB = 10 RCU
+
+# Example 2: 16 eventually cons. reads per sec of 12 KB each
+(16 / 2) * (12 / 4) = 24 RCU
+
+# Example 3: 10 strong cons. reads per sec of 6 KB each
+(10 / 1) * (8KB / 4) = 20 RCU # Not (we have to round 6 KB up to 8KB)
+```
+
+### DynamoDB - Throttling
+- If we exceed our RCU or WCU, we get
+ProvisionedThroughputExceededExceptions
+- Reasons:
+    - Hot keys / partitions: one partition key is being read too many times (popular item for ex)
+- Very large items: remember RCU and WCU depends on size of items
+- Solutions:
+    - Exponential back-off when exception is encountered (already in SDK)
+    - Distribute partition keys as much as possible
+    - _If RCU issue, we can use DynamoDB Accelerator (DAX)_
+
+### DynamoDB – Batching Writes
+- BatchWriteItem
+    - Up to 25 PutItem and / or DeleteItem in one call
+    - Up to 16 MB of data written
+    - Up to 400 KB of data per item
 
 #### Burst Capacity
 DynamoDB provides some flex in your per-partition throughput provisioning by providing burst capacity. DynamoDB reserves a portion of that unused capacity for later burssts of throughput to handle usage spikes.
 
-- Use **Global Tables**, a fully managed solution across multiple regions, multi-master databases
+DynamoDB currently retains up to 5 minutes (300 seconds) of unused read and write capacity. During an occasional burst of read or write activity, these extra capacity units can be consumed quickly—even faster than the per-second provisioned throughput capacity that you've defined for your table.
+
+#### Adaptive Capacity
+
+Adaptive capacity is a feature that enables DynamoDB to run imbalanced workloads indefinitely. It minimizes throttling due to throughput exceptions. It also helps you reduce costs by enabling you to provision only the throughput capacity that you need.
+
+enables your application to continue reading and writing to hot partitions without being throttled. Provided that traffic does not exceed your tables total provisioned capacity or the partition maximum capacity. 
 
 ## Serverless
 - Read/write capacity modes
@@ -67,6 +130,32 @@ This enables DynamoDB to have a fexible schema, so each row can have any number 
 DynamoDB provides two read/write capacity modes for each table: **on-demand** and **provisioned**.
 
 For workloads that are less predictable for which you are unsure that you will have high utilization, on-demand capacity mode takes care of managing capacity for you, and you only pay for what you consume. Tables using provisioned capacity mode require you to set read and write capacity.
+
+### Partitions
+
+Each partition:
+
+- Max of 3000 RCU
+- Max of 1000 WCU
+- Max of 10GB
+
+Compute # of partitions
+
+- By capacity: `(TOTAL RCU / 3000) + (TOTAL WCU / 1000)`
+- By size: `Total Size / 10 GB`
+
+WCU and RCU are spread evenly between partitions
+
+Example:
+
+```bash
+Table settings: Total 6000 RCU / Total 2400 WCU / 3 Partitions
+- Partition 1: 2000 RCU / 800 WCU
+- Partition 2: 2000 RCU / 800 WCU
+- Partition 3: 2000 RCU / 800 WCU
+```
+
+
 
 ### Auto-Scaling
 

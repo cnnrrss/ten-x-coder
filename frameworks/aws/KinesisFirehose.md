@@ -14,6 +14,12 @@ Other Producers...
 
 You can also configure Firehose to transform data before delivery.
 
+### Destinations
+- S3: when s3 is selected as destination, and source record S3 backup is enabled, untransformed incoming data can be delivered to a separate S3 bucket and errors are delivered to processing-failed and errors folder in S3 bucket.
+- Redshift:
+- Elasticsearch:
+- Splunk:
+
 ### Delivery Limits
 Kinesis firehose data delivery frequency limits
 
@@ -21,6 +27,11 @@ Kinesis firehose data delivery frequency limits
 |-|--|--|------|
 |**Buffer size**|1-128 MB|1-100 MB|5 MB|
 |**Buffer interval**|60-900 seconds|60-900 seconds|60 seconds|
+
+- Each account can have up to 50 delivery streams per region.
+- Kinesis Data Firehose delivery stream stores data records for up to **24 hours** in case the delivery destination is unavailable.
+- Maximum size of a record sent to Kinesis Data Firehose, before base64-encoding, is **1000 KiB**
+- `PutRecordBatch` operation can take up to 500 records per call or 4 MiB per call, whichever is smaller. This limit cannot be changed.
 
 #### Lambda Blueprints
 
@@ -36,11 +47,7 @@ Firehose can transform using **Data Transformation** and **Record Format** techn
 • **Kinesis Data Firehose Process Record Streams as source** — Accesses the Kinesis Data Streams records in the input and returns them with a processing status. \
 • **Kinesis Data Firehose CloudWatch Logs Processor** — Parses and extracts individual log events from records sent by CloudWatch Logs subscription filters.
 
-
 • **Record format Conversion**: Firehose can convert JSON to Parquet or Apache ORC format before storing in S3. These formats are columnar that save space and enable faster queries compared to row-oriented formats like JSON.
-
-Apply transform of syslog data to JSON and CSV format:
-- Data transformation from syslog to JSON and CSV can be performed through Lambda blueprints
 
 Backup the syslog streaming data:
 - When s3 is selected as destination, an source record S3 backup is enabled, untransformed incoming data can be delivered to a separate S3 bucket

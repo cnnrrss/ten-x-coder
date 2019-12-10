@@ -5,14 +5,34 @@ Last minute review
 ### Cold
 
 - [x] storage volumes (File Gateway: NFS, traditional, Volume: cached - store in S3 and keep some local; volume - backups, Tape Gateway: Glacier)
-- [] Elastic transcoder
-- [] KPL future objects
-- [] Athean Permissions (Data catlogue, encrypted metadata, actions, ...)
-- [] Aurora / Quicksight
+- [x] Elastic transcoder
+- [x] KPL future objects
+    - provide capabilities to use Future objects to validate UserRecords.
+- [x] Athean Permissions
+    - actions
+    - encrypted metadata in GC
+    - source data in S3
+    - dbs / tbls in GC
+- [x] Aurora
+    - Aurora fully managed RDS (5x on MySQL, 3x on Postgres)
 - [] Kinesis Video Streams (HLS, GetMedia API)
-- [] Kinesis Analytics integrations
-- [] IoT Rules / Message Broker / Device Shardow / etc... 
-- [] Datapipeline
+- [x] Kinesis Analytics integrations
+    - **sources**: (DS, Firehose, data in S3)
+    - **dest**: (DS, Firehose, Lambda)
+    - Also, lambda record pre-processing
+- [x] IoT Rules / Message Broker / Device Shadow / etc...
+    - Device Gateway: manages connections. TLS for in transit.
+    - Registry: tracks metadatas
+    - Broker: pub/sub messages to and from IoT
+    - Rules Engine: gather, process, analyze messages and act on data devices. transform deliver to services. No infra. 1-N actions in parrallel.
+    - Device Shadow: persisted, shadow of device to manage device state.
+- [x] Datapipeline: • Destinations include **S3, RDS, DynamoDB, Redshift and EMR**. Manages task **dependencies**. **Retries** and notifies on failures. **Cross-region** pipelines. **Precondition** checks. Data sources may be **on-prem**ises. Highly available.
+    - **Activities**:
+    • EMR
+    • Hive
+    • Copy
+    • SQL
+    • Scripts
 
 ### Warm
 - [x] EMR high network costs / slow performance == HDFS temp storage for processing ?
@@ -30,9 +50,10 @@ Last minute review
 - [x] Cloudsearch - XML / JSON files
 - [x] Binary Classification AUC score (.51 is like taking a guess, 1 is good)
 - [x] Kinesis Data Streams uses unique DynamoDB table to keep track of state. KCL ProvisionedThroughput errors means u need to increase DynamoDB throughput
-- [] DynamoDB to Redshift (ensure empty values handled, ensure data types matches b/w engines)
+- [x] DynamoDB to Redshift (ensure empty values handled, ensure data types matches b/w engines)
 - [] ML (Source from Redshift or S3)
-- [] bzip2 supports splitting files
+- [x] bzip2 supports splitting files
+
 ### Must Know
 - [x] RCU / WCU DynamoDB (1sc/2ec) 4 KB RCU; 1 KB WCU;
 - [] ML Algorithms / Amazon ML data sources

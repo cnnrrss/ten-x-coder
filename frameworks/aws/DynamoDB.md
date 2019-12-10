@@ -129,7 +129,7 @@ This enables DynamoDB to have a fexible schema, so each row can have any number 
 
 DynamoDB provides two read/write capacity modes for each table: **on-demand** and **provisioned**.
 
-For workloads that are less predictable for which you are unsure that you will have high utilization: 
+For workloads that are less predictable for which you are unsure that you will have high utilization:
 
 **On-demand capacity** mode takes care of managing capacity for you, and you only pay for what you consume.
 
@@ -158,8 +158,6 @@ Table settings: Total 6000 RCU / Total 2400 WCU / 3 Partitions
 - Partition 2: 2000 RCU / 800 WCU
 - Partition 3: 2000 RCU / 800 WCU
 ```
-
-
 
 ### Auto-Scaling
 

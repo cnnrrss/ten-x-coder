@@ -8,31 +8,39 @@ class TreeNode:
     def __init__(self, data):
         self.data = data
         self.left, self.right = None, None
-    
+
 def build_tree():
     print("\n********Press N to stop entering at any point of time********\n")
     print("Enter the value of the root node: ", end="")
+
     check = raw_input().strip().lower()
     if check == 'n':
-        return None 
+        return None
+
     data = int(check)
     q = queue.Queue()
     node = TreeNode(data)
     q.put(node)
+
     while not q.empty():
         found = q.get()
         print("Enter the left node of %s: " % found.data, end="")
+
         check = raw_input().strip().lower()
         if check == 'n':
             return node
+
         left_data = int(check)
         left_node = TreeNode(left_data)
         found.left = left_node
         q.put(left_node)
         print("Enter the right node of %s: " % found.data, end="")
+
         check = raw_input().strip().lower()
+
         if check == 'n':
             return node
+
         right_data = int(check)
         right_node = TreeNode(right_data)
         found.right = right_node
@@ -59,6 +67,7 @@ def in_order(root):
 def post_order(root):
     if not isinstance(root, TreeNode) or not root:
         return
+
     pre_order(root.left)
     pre_order(root.right)
     print(root.data, end=" ")
@@ -66,8 +75,10 @@ def post_order(root):
 def bfs(root):
     if not isinstance(root, TreeNode) or not root:
         return
+
     q = queue.Queue()
     q.put(root)
+
     while not q.empty():
         node = q.get()
         print(node.data, end=" ")
@@ -80,8 +91,10 @@ def dfs(root):
     # dfs is a pre order iterative traversal
     if not isinstance(root, TreeNode) or not root:
         return
+
     stack = []
     node = root
+
     while node or stack:
         while node:
             print(node.data, end=" ")

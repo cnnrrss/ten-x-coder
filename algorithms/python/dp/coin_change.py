@@ -13,7 +13,7 @@ def coin_change_n_ways(Coins, m, total):
     for coin in Coins:
         for j in range(coin, total + 1):
             memo[j] += memo[j - coin]
-    
+
     # print(f'{memo}')
     return memo[total]
 

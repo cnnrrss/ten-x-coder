@@ -9,9 +9,9 @@ Hadoop: Implementation of MapReduce (DFS)
 Spark: execute batch queries as well, large community, Java/Python/Scala
 Hive: analyzing, summarizing and querying data stored in Hadoop file system
 Presto: BI-type queries, support for concurrent query workloads.
-Beam: 
+Beam:
 Pig: high-level data flow scripting language that supports standalone scripts and provides an interactive shell which executes on Hadoop 
-Giraph: 
+Giraph:
 
 ### Big Data & ML Strategies
 
@@ -63,7 +63,7 @@ per query.
 
 **Bloom filter** - The purpose of the Bloom filter is to allow through all stream elements whose keys are in S, while rejecting most of the stream elements whose keys are not in S.
 
-**Page Rank** - 
+**Page Rank** -
 
 **DFS / Cluster Computing**
 

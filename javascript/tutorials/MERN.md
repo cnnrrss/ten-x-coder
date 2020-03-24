@@ -30,7 +30,7 @@ git push -u origin master
 4. Install Express (REST api easy framework)
 `npm install express`
 
-5. setup express app 
+5. setup express app
 ```javascript
 const app = express();
 ```

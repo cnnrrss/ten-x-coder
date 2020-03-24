@@ -11,8 +11,8 @@ Unlike browser DOM elements, React elements are plain Objects and cheap to creat
 
 `<div id="root"></div>`
 Called the "root" DOM node because everythign inside it will be managed by React DOM
-	
-Applications built with just React usually have a single root DOM node. 
+
+Applications built with just React usually have a single root DOM node.
 
 If you are integrating React into an existing app, you may have as many isolated root DOM nodes as you like.
 
@@ -36,7 +36,7 @@ setInterval(tick, 1000);
 
 It calls ReactDOM.render() every second from a setInterval() callback.
 
-In practice, most React apps only call ReactDOM.render() once. 
+In practice, most React apps only call ReactDOM.render() once.
 In the next sections we will learn how such code gets encapsulated into stateful components.
 
 React DOM compares the element and its children to the previous one, and only applies the DOM updates necessary to bring the DOM to the desired state.

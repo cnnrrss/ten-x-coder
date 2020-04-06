@@ -52,7 +52,7 @@
 - Heapify (percolate down)
 - Heap sort
 
-### Specialized data structures 
+### Specialized data structures
 - String data types: arrays of characters / Suffix trees / arrays
 - Geometric data structures: polygons / points / regions
 - Graph data structures: adjacency matrices / adjacency lists

@@ -35,7 +35,7 @@ Two pointers:
 - Longest Increasing Sequence
 - Coin change
 - Rod cutting
-- Class 
+- Class
 
 **Strategies** \
 Tabulation \
@@ -76,7 +76,7 @@ Greedy Algorithm
 ## Bit Manipulation
 
 ## Greedy Method
-For example, a greedy strategy for the traveling salesman problem (which is of a high computational complexity) is the following heuristic: "At each step of the journey, visit the nearest unvisited city." This heuristic does not intend to find a best solution, but it terminates in a reasonable number of steps; finding an optimal solution to such a complex problem typically requires unreasonably many steps. 
+For example, a greedy strategy for the traveling salesman problem (which is of a high computational complexity) is the following heuristic: "At each step of the journey, visit the nearest unvisited city." This heuristic does not intend to find a best solution, but it terminates in a reasonable number of steps; finding an optimal solution to such a complex problem typically requires unreasonably many steps.
 
 In mathematical optimization, greedy algorithms optimally solve combinatorial problems having the properties of matroids, and give constant-factor approximations to optimization problems with submodular structure.
 

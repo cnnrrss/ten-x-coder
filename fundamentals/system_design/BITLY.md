@@ -19,7 +19,7 @@
     - Allow them to register a subdomain
     - Each user assigned a subdomain (or alternatively the longURL host)
     - spotify.bit.ly/e43k3hf
-    
+
 - How to track click stats?
 
 ### Design

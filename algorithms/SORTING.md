@@ -9,11 +9,11 @@
 - Similar to selection sort
 - Divide and conquer algo
     1. Pick element called a pivot from array
-    2. Partitioning: reorder the array so that all elements value less than 
+    2. Partitioning: reorder the array so that all elements value less than
 the pivot
     3. Recursively* apply the above steps to the sub-array of elements with smaller values and sub-arr with greater values
 
-#### Mergesort 
+#### Mergesort
 Efficient gen-purpose comparison based sorting algo
 - Most implementations produce a stable sort
 - Divide and conquer
@@ -36,7 +36,7 @@ Space Complex O(1)
 Sorting by exchage
 - simple
 	- step through list
-	- compare adjacent pairs 
+	- compare adjacent pairs
 	- swaps if they are in the wrong order
 	- The pass through the list is repeated until the list is sorted.
 - (Comp Sort)
@@ -54,8 +54,8 @@ Sort by selecting
 
 ## Other Sorts
 
-#### Timsort 
-- Hybrid sort 
+#### Timsort
+- Hybrid sort
 - Insertion sort to combine runs smaller than minimum run size and merge sort otherwise.
 
 
@@ -69,7 +69,7 @@ Its typical use is sorting elements online: after each insertion, the set of ele
 - Avg O(log n)
 - Trees require memory to be allocated on the heap, which is a performance hit
 
-#### Splaysort 
+#### Splaysort
 Adaptive comparison sorting algorithm basedo on the splay tree data structure.
 
 

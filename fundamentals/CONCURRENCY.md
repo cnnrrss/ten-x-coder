@@ -3,7 +3,7 @@
 #### Processes & Threads
 **Process** - two separate programs
     - Can only shary data over protocol connection
-    
+
 **Threads** - two _channels_ of work in a program that can share data
 
 ### Channels golang
@@ -12,7 +12,7 @@
 #### Mutexes / Locks
 - Mutex locks access between shared threads to a shared resource.
 - Ensure exclusive acess to a resource
-- Careful can slow program 
+- Careful can slow program
 
 #### Semaphores & Monitors
 - Semaphore: int to control the number of resources available. (think 4 cash registers).
